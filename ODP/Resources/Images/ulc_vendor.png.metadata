@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ba" sequence="1" unid="E341F854952FE249C1257B850001710E">
+<created><datetime dst="true">20130609T021544,78+02</datetime></created>
+<modified><datetime dst="true">20130609T021546,05+02</datetime></modified>
+<revised><datetime dst="true">20130609T021546,04+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130609T021546,05+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130609T021546,05+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$FileModDT" sign="true"><datetime>20121117T174759,98+01</datetime></item>
+<item name="$ImageNames" sign="true"><text>ulc_light.png</text></item>
+<item name="$TITLE" sign="true"><text>ulc_vendor.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$EditFilePath"><text>C:\Users\Oliver\AppData\Local\Temp\notes5D3EFE\~ulc_light.png</text></item>
+<item name="$Flags"><text>34CiQ$</text></item></note>

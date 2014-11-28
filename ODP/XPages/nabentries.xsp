@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="Fetching Name Entries from Multiple NABs">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:pager
+					layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow"
+					partialRefresh="true" id="pager1" for="repeat1" lang="en_US">
+				</xp:pager>
+				<xp:repeat id="repeat1" var="data">
+					<xp:this.value><![CDATA[#{javascript:var entries = new com.tools.NabEntries(session);
+return entries.getNames()}]]></xp:this.value>
+					<xp:link escape="true" id="link1">
+						<xp:this.text><![CDATA[#{javascript:data.getLastName()+", "+data.getFirstName()}]]></xp:this.text>
+						<xp:eventHandler event="onclick" submit="false">
+							<xp:this.script><![CDATA[window.open('#{javascript:"/"+data.getDb().getDatabasePath()+"/0/"+data.getUniversalId();}')]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:link>
+
+					<xp:br></xp:br>
+				</xp:repeat>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

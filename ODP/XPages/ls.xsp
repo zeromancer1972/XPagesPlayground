@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:wgpoi="http://www.webgate.biz/xsp/poi">
+
+	<xc:ccLayout pageTitle="ULC Leistungsschein">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle" id="doc">
+				<xp:table id="formtable">
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Customer" id="label1"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputTextarea id="inputTextarea3"
+								style="width:512.0px;height:76.0px"
+								value="#{sessionScope.customer}">
+							</xp:inputTextarea>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Author" id="label2"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText id="inputText2"
+								value="#{sessionScope.author}">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Project" id="label3"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText id="inputText3"
+								value="#{sessionScope.project}">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Date" id="label4"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText id="inputText4"
+								value="#{sessionScope.date}">
+								<xp:this.converter>
+									<xp:convertDateTime type="both"></xp:convertDateTime>
+								</xp:this.converter>
+								<xp:dateTimeHelper id="dateTimeHelper1"></xp:dateTimeHelper>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label id="label7" value="Location"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText id="inputText5"
+								value="#{sessionScope.location}">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Remarks" id="label5"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputTextarea id="inputTextarea1"
+								style="width:512.0px;height:76.0px"
+								value="#{sessionScope.remarks}">
+							</xp:inputTextarea>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="More effort" id="label6"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputTextarea id="inputTextarea2"
+								style="width:512.0px;height:76.0px"
+								value="#{sessionScope.more}">
+							</xp:inputTextarea>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+				</xp:table>
+				<xp:button value="Create PDF" id="button1">
+
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<wgpoi:generateDocument
+								documentId="document1">
+							</wgpoi:generateDocument>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+	<wgpoi:document id="document1" pdfOutput="true">
+		<wgpoi:this.downloadFileName><![CDATA[#{javascript:"Leistungsschein_"+@Unique()+".pdf"}]]></wgpoi:this.downloadFileName>
+		<wgpoi:this.templateSource>
+			<wgpoi:resourcetemplate
+				fileName="ulc_leistungsschein.dotx">
+			</wgpoi:resourcetemplate>
+		</wgpoi:this.templateSource>
+		<wgpoi:this.bookmarks>
+			<wgpoi:docbookmark name="customer"
+				value="#{javascript:sessionScope.customer}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="author"
+				value="#{javascript:sessionScope.author}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="project"
+				value="#{javascript:sessionScope.project}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="date"
+				value="#{javascript:sessionScope.date}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="location"
+				value="#{javascript:sessionScope.location}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="remarks"
+				value="#{javascript:sessionScope.remarks}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="more"
+				value="#{javascript:sessionScope.more}">
+			</wgpoi:docbookmark>
+		</wgpoi:this.bookmarks></wgpoi:document>
+	</xp:view>

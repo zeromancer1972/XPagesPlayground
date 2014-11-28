@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:viewPanel rows="30" id="viewPanel1" viewStyle="width:100%">
+		<xp:this.facets>
+			<xp:pager partialRefresh="true" layout="Previous Group Next"
+				xp:key="headerPager" id="pager1">
+			</xp:pager>
+		</xp:this.facets>
+		<xp:this.data>
+			<xp:dominoView var="view1" viewName="VGakt"></xp:dominoView>
+		</xp:this.data>
+		<xp:viewColumn columnName="$74" id="viewColumn1" displayAs="link">
+			<xp:viewColumnHeader value="Mitarbeiter"
+				id="viewColumnHeader1">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		
+		
+		
+		<xp:viewColumn columnName="$77" id="viewColumn5" displayAs="link">
+			<xp:viewColumnHeader value="Urlaub"
+				id="viewColumnHeader5">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="co_ugesamt" id="viewColumn6">
+			<xp:viewColumnHeader value="Anspruch"
+				id="viewColumnHeader6">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="co_aktjahr" id="viewColumn7">
+			<xp:viewColumnHeader value="dav. VJ"
+				id="viewColumnHeader7">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="co_uweg" id="viewColumn8">
+			<xp:viewColumnHeader value="genommen"
+				id="viewColumnHeader8">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="co_urest" id="viewColumn9">
+			<xp:viewColumnHeader value="Rest" id="viewColumnHeader9"></xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="in_Status_1" id="viewColumn10">
+			<xp:viewColumnHeader value="in_Status_1"
+				id="viewColumnHeader10">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+	</xp:viewPanel></xp:view>

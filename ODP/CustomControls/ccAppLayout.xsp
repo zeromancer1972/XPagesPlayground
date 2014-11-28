@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xe:applicationLayout id="applicationLayout1">
+		<xe:this.configuration>
+			<xe:applicationConfiguration>
+				<xe:this.footerLinks>
+					<xe:basicContainerNode label="Container 1">
+						<xe:this.children>
+							<xe:basicLeafNode label="Link 1" href="/"></xe:basicLeafNode>
+							<xe:basicLeafNode label="Link 2" href="/"></xe:basicLeafNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+					<xe:basicContainerNode label="Container 2">
+						<xe:this.children>
+							<xe:basicLeafNode label="Link 1" href="/"></xe:basicLeafNode>
+							<xe:basicLeafNode label="Link 2" href="/"></xe:basicLeafNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+				</xe:this.footerLinks>
+			</xe:applicationConfiguration>
+		</xe:this.configuration>
+	</xe:applicationLayout></xp:view>

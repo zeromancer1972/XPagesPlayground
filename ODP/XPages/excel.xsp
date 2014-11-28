@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:wgpoi="http://www.webgate.biz/xsp/poi">
+
+	<xc:ccLayout pageTitle="Excel export">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<wgpoi:spreadsheet id="spreadsheet1"
+					downloadFileName="fakenames.xlsx">
+
+					<wgpoi:this.templateSource>
+						<wgpoi:resourcetemplate fileName="blank.xlsx">
+						</wgpoi:resourcetemplate>
+					</wgpoi:this.templateSource>
+					<wgpoi:this.spreadsheets>
+						<wgpoi:table create="true">
+							<wgpoi:this.exportDefinitions>
+								<wgpoi:data2rowExport dataSourceVar="names"
+									stepSize="1" index="index" startRow="1" var="names">
+									<wgpoi:this.columns>
+										<wgpoi:columnDefinition columnTitle="lastname"
+											columnNumber="0" rowShift="0">
+										</wgpoi:columnDefinition>
+										<wgpoi:columnDefinition columnNumber="1"
+											rowShift="0" columnTitle="firstname">
+										</wgpoi:columnDefinition>
+									</wgpoi:this.columns>
+									<wgpoi:this.dataSource>
+										<wgpoi:dominoViewSource viewName="ByName">
+										</wgpoi:dominoViewSource>
+									</wgpoi:this.dataSource>
+								</wgpoi:data2rowExport>
+							</wgpoi:this.exportDefinitions>
+						</wgpoi:table>
+					</wgpoi:this.spreadsheets>
+				</wgpoi:spreadsheet>
+				<xp:button value="Fake names" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<wgpoi:generateSVE sveId="spreadsheet1"></wgpoi:generateSVE>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

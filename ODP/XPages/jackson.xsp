@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="JSON 2 Map">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+
+				<xp:repeat id="repeat1" rows="30" var="data">
+					<xp:this.value><![CDATA[#{javascript:var JsonToMap = new com.tools.JSONtoMap();
+return JsonToMap.getData().entrySet();}]]></xp:this.value>
+
+					<xp:text tagName="h3">
+
+						<xp:this.value><![CDATA[#{javascript:data.getKey()+" - "+data.getValue();}]]></xp:this.value>
+					</xp:text>
+
+				</xp:repeat>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

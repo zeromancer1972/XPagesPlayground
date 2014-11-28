@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="Locked documents">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:div>
+					<xp:button value="Create Document" id="button2">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action>
+								<xp:openPage name="/doc.xsp" target="newDocument"></xp:openPage>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Delete document" id="button1">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="viewPanel1">
+							<xp:this.action>
+								<xp:deleteSelectedDocuments view="viewPanel1"
+									message="Do you want to delete the selected documents?">
+								</xp:deleteSelectedDocuments>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Refresh" id="button3">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="viewPanel1">
+						</xp:eventHandler>
+					</xp:button>
+				</xp:div>
+				<xp:viewPanel rows="30" id="viewPanel1" viewStyle="width:100%">
+					<xp:this.facets>
+						<xp:pager partialRefresh="true" layout="Previous Group Next"
+							xp:key="headerPager" id="pager1">
+						</xp:pager>
+					</xp:this.facets>
+					<xp:this.data>
+						<xp:dominoView var="view1" viewName="vwLockedDocuments">
+						</xp:dominoView>
+					</xp:this.data>
+					<xp:viewColumn id="viewColumn1" style="width:500px"
+						showCheckbox="true" columnName="lockUNID">
+						<xp:viewColumnHeader id="viewColumnHeader1"
+							value="#">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="lockUser" id="viewColumn2">
+						<xp:viewColumnHeader value="lockUser" id="viewColumnHeader2">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="lockTimestamp" id="viewColumn3"
+						style="width:200px">
+						<xp:viewColumnHeader value="lockTimestamp" id="viewColumnHeader3">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+				</xp:viewPanel>
+				<xp:div></xp:div>
+				<xp:viewPanel rows="30" id="viewPanel2" viewStyle="width:100%">
+					<xp:this.facets>
+						<xp:pager partialRefresh="true" layout="Previous Group Next"
+							xp:key="headerPager" id="pager2">
+						</xp:pager>
+					</xp:this.facets>
+					<xp:this.data>
+						<xp:dominoView var="view2" viewName="DocLocker">
+						</xp:dominoView>
+					</xp:this.data>
+					<xp:viewColumn columnName="$0" id="viewColumn4"
+						style="width:200px">
+						<xp:viewColumnHeader value="Lock at" id="viewColumnHeader4">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="Subject" id="viewColumn5"
+						displayAs="link" openDocAsReadonly="true">
+						<xp:viewColumnHeader value="Subject" id="viewColumnHeader5">
+						</xp:viewColumnHeader>
+					</xp:viewColumn>
+				</xp:viewPanel>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

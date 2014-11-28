@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="65a" sequence="38" unid="61CD4B8E9E6C7C4DC1257CAC0058AFAC">
+<created><datetime dst="true">20140331T180841,40+02</datetime></created>
+<modified><datetime>20141128T211723,35+01</datetime></modified>
+<revised><datetime>20141128T111927,40+01</datetime></revised>
+<lastaccessed><datetime>20141128T211723,35+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140331T180841,41+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/tools/JSONtoMap.java</text></item>
+
+
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/tools/JSONtoMap.java</text></item>
+
+</note>

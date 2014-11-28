@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:div>
+		<xp:text tagName="h2" value="View data" id="label1"
+			styleClass="lotusHeading"></xp:text>
+	</xp:div>
+	<xp:div>
+	<xp:pager layout="Previous Group Next" partialRefresh="true"
+		id="pager1" for="repeat1">
+	</xp:pager>
+	<xp:repeat id="repeat1" rows="30" var="entry">
+			<xp:this.value><![CDATA[#{javascript:var viewData = new com.olb.Viewdata()
+return viewData.getData(compositeData.database, compositeData.view)}]]></xp:this.value>
+			<xp:div>
+				<xp:label
+					value="#{javascript:entry.getColumnValues().firstElement()}"
+					id="label2">
+				</xp:label>
+			</xp:div>
+		</xp:repeat>
+	</xp:div>
+</xp:view>

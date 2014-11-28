@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:wgpoi="http://www.webgate.biz/xsp/poi"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="POI4Xpages">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:button value="Download PDF" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<wgpoi:generateDocument documentId="document1">
+							</wgpoi:generateDocument>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Download DOCX" id="button2">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<wgpoi:generateDocument documentId="document2"></wgpoi:generateDocument>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:link escape="true" text="The template" id="link2"
+					value="template.docx"></xp:link>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:link escape="true" text="POI4XPages on OpenNTF" id="link1"
+					target="_blank">
+					<xp:this.value><![CDATA[http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=POI%204%20XPages]]></xp:this.value>
+				</xp:link>
+			</xp:div>
+
+		</xp:this.facets>
+	</xc:ccLayout>
+
+	<wgpoi:document id="document1" downloadFileName="demo.pdf"
+		pathInfo="getit.xsp" pdfOutput="true">
+		<wgpoi:this.templateSource>
+			<wgpoi:resourcetemplate fileName="template.docx">
+			</wgpoi:resourcetemplate>
+		</wgpoi:this.templateSource>
+
+		<wgpoi:this.bookmarks>
+
+			<wgpoi:docbookmark value="#{javascript:@UserName()}"
+				name="name">
+			</wgpoi:docbookmark>
+
+		</wgpoi:this.bookmarks>
+	</wgpoi:document>
+	<wgpoi:document id="document2" downloadFileName="demo.docx"
+		pathInfo="getit.xsp" pdfOutput="false">
+		<wgpoi:this.templateSource>
+			<wgpoi:resourcetemplate fileName="template.docx">
+			</wgpoi:resourcetemplate>
+		</wgpoi:this.templateSource>
+		<wgpoi:this.bookmarks>
+			<wgpoi:docbookmark name="name" value="#{javascript:@UserName()}">
+			</wgpoi:docbookmark>
+			<wgpoi:docbookmark name="second">
+				<wgpoi:this.value><![CDATA[#{javascript:"Hello second!"}]]></wgpoi:this.value>
+			</wgpoi:docbookmark>
+		</wgpoi:this.bookmarks>
+	</wgpoi:document>
+</xp:view>

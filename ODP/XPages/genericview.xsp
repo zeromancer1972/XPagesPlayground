@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="Generic View">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xc:ccGenViewSelect refreshId="viewPanel"></xc:ccGenViewSelect>
+				<xc:ccGenView id="viewPanel">
+					<xc:this.database><![CDATA[#{javascript:getComponent("inputText1").getValue()}]]></xc:this.database>
+					<xc:this.view><![CDATA[#{javascript:getComponent("inputText2").getValue()}]]></xc:this.view>
+				</xc:ccGenView>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

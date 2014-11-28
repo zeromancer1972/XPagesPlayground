@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" style="background-color:rgb(255,255,255)">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="Stamm"></xp:dominoDocument>
+	</xp:this.data>
+	<xp:div>
+		<xp:button value="Save" id="button1">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+
+				<xp:this.action>
+					<xp:saveDocument var="document1"></xp:saveDocument>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:table>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Name:" id="name_Label1"
+						for="name1">
+					</xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document1.Name}"
+						id="name1">
+					</xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Vorname:" id="vorname_Label1"
+						for="vorname1">
+					</xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document1.Vorname}"
+						id="vorname1">
+					</xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Geb dat:" id="gebDat_Label1"
+						for="gebDat1">
+					</xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document1.GebDat}"
+						id="gebDat1">
+						<xp:dateTimeHelper id="dateTimeHelper1">
+						</xp:dateTimeHelper>
+						<xp:this.converter>
+							<xp:convertDateTime type="date"
+								dateStyle="short">
+							</xp:convertDateTime>
+						</xp:this.converter>
+					</xp:inputText>
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+	</xp:div>
+</xp:view>

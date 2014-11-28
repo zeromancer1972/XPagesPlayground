@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="rtflite"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:ccLayout pageTitle="RTF lite">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:inputRichText id="inputRichText1"
+					value="#{document1.rtf}">
+				</xp:inputRichText>
+
+				<xp:button value="Label" id="button1"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:saveDocument var="document1"></xp:saveDocument>
+	</xp:this.action></xp:eventHandler></xp:button>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

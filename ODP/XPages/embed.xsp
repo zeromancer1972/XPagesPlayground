@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+
+	<xp:button value="Send Mail" id="button1"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:sendMail embeddedFormat="json" subject="This is a test"
+			from="#{javascript:@UserName()}" gadgetUrl="embed.xml">
+
+			<xp:this.to><![CDATA[#{javascript:"Oliver Busse"}]]></xp:this.to>
+			<xp:this.eeContext>
+				<xp:parameter name="foo" value="bar"></xp:parameter>
+			</xp:this.eeContext>
+		</xp:sendMail>
+	</xp:this.action></xp:eventHandler></xp:button>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:comboBox id="comboBox1">
+		<xp:selectItem itemLabel="choose"></xp:selectItem><xp:selectItem itemLabel="foo" itemValue="bar"></xp:selectItem>
+		<xp:selectItem itemLabel="test" itemValue="value"></xp:selectItem>
+		
+	</xp:comboBox></xp:view>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xc:ccLayout pageTitle="OpenNTF Domino API">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:tabbedPanel id="tabbedPanel1" partialRefresh="true"
+					refreshId="tabbedPanel1">
+					<xp:tabPanel label="Get all entries from a view" id="tabPanel1">
+						<xp:div id="data">
+							<xp:pager
+								layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow"
+								partialRefresh="true" id="pager1" for="repeat1"
+								alwaysCalculateLast="true">
+							</xp:pager>
+							<xp:table style="width:99%">
+								<xp:div id="dataTable">
+									<xp:repeat id="repeat1" rows="30"
+										value="#{javascript:openntf.getAllDocs()}" var="data">
+
+										<xp:tr>
+											<xp:td style="width:300px">
+												<xp:link id="link1">
+													<xp:this.text><![CDATA[#{javascript:data.getDocument().getItemValueString("lastname")}]]></xp:this.text>
+													<xp:this.value><![CDATA[#{javascript:"/addname.xsp?documentId="+data.getDocument().getUniversalID()+"&action=editDocument"}]]></xp:this.value>
+												</xp:link>
+											</xp:td>
+											<xp:td style="width:200px">
+												<xp:label id="label2">
+													<xp:this.value><![CDATA[#{javascript:data.getDocument().getItemValueString("firstname")}]]></xp:this.value>
+												</xp:label>
+											</xp:td>
+											<xp:td style="width:200px">
+												<xp:label id="label3">
+													<xp:this.value><![CDATA[#{javascript:data.getDocument().getItemValueString("city")}]]></xp:this.value>
+												</xp:label>
+											</xp:td>
+											<xp:td style="width:100px">
+												<xp:label id="label4">
+													<xp:this.value><![CDATA[#{javascript:data.getDocument().getItemValueString("zip").toString()}]]></xp:this.value>
+												</xp:label>
+											</xp:td>
+										</xp:tr>
+									</xp:repeat>
+								</xp:div>
+							</xp:table>
+						</xp:div>
+					</xp:tabPanel>
+					<xp:tabPanel label="Code" id="tabPanel2">
+						<pre>public ViewEntryCollection getAllDocs() {
+							Session s =
+							Factory.getSession();
+							Database db = s.getCurrentDatabase();
+							View v
+							= db.getView("ByName");
+							return v.getAllEntries();
+							}
+						</pre>
+					</xp:tabPanel>
+				</xp:tabbedPanel>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

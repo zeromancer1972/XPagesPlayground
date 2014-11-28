@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:bx="http://www.openntf.org/xsp/bootstrap">
+
+	<xe:applicationLayout id="applicationLayout1">
+		<xe:this.configuration>
+			<bx:bootstrapApplication navbarInverted="true"
+				placeBar="false" titleBar="true" titleBarName="#{javascript:compositeData.pageTitle}"
+				banner="true" footer="true">
+				<bx:this.titleBarTabs>
+					<xe:pageTreeNode label="Home" page="/index.xsp"></xe:pageTreeNode>
+					<xe:pageTreeNode label="OpenNTF API" page="/openntfapi.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Social Business Toolkit"
+						page="/connections.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="POI" page="/poi.xsp"></xe:pageTreeNode>
+				</bx:this.titleBarTabs>
+				<bx:this.bannerApplicationLinks>
+					<xe:basicLeafNode label="XPages Playground" href="/index.xsp">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="OpenNTF" href="http://www.openntf.org">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="XSnippets"
+						href="openntf.org/XSnippets.nsf/home.xsp">
+					</xe:basicLeafNode>
+
+				</bx:this.bannerApplicationLinks>
+
+				<bx:this.footerLinks>
+					<xe:basicLeafNode label="(C) 2014 Oliver Busse"></xe:basicLeafNode>
+				</bx:this.footerLinks>
+			</bx:bootstrapApplication>
+		</xe:this.configuration>
+		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+		<xe:this.facets>
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+			<xp:div xp:key="LeftColumn">
+				<xe:navigator id="navigator1" styleClass="navEntry">
+					<xe:this.treeNodes>
+						<xe:pageTreeNode label="Readers'n'Authors" page="/readersnauthors.xsp">
+							</xe:pageTreeNode>
+						<xe:pageTreeNode label="Multi NAB Entries" page="/nabentries.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Dojo Dialog Form" page="/dialogform.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="ControlHelper" page="/controls.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Mobile Fake Names" page="/m_names.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Jackson Demo" page="/jackson.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Custom Theme IDs" page="/themeid.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="JSON Tests" page="/json.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Custom output" page="/customoutput.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Dialogs" page="/dialogs.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Document Entity"
+							page="/documentEntity.xsp">
+						</xe:pageTreeNode>
+					</xe:this.treeNodes>
+				</xe:navigator>
+
+			</xp:div>
+		</xe:this.facets>
+
+	</xe:applicationLayout>
+</xp:view>

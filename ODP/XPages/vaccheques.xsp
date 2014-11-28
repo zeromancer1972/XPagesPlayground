@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:ccLayoutManage pageTitle="Vacation cheques">
+		<xp:this.facets>
+			<xe:widgetContainer id="widgetContainer1"
+				xp:key="facetMiddle" titleBarText="Manage Vacation Cheques">
+
+				<xe:this.dropDownNodes>
+					<xe:basicLeafNode href="cheque.xsp"
+						label="Create cheque">
+					</xe:basicLeafNode>
+				</xe:this.dropDownNodes>
+				<xc:ccVacationCheques></xc:ccVacationCheques>
+
+
+			</xe:widgetContainer>
+		</xp:this.facets>
+	</xc:ccLayoutManage>
+
+</xp:view>

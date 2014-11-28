@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xc:ccLayout pageTitle="Accessing IBM Connections">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xe:widgetContainer id="widgetContainer1"
+					titleBarText="List of public communities">
+					<xp:table styleClass="lotusTable">
+						<tbody>
+							<xp:repeat id="repeat1" rows="30" var="community"
+								indexVar="communityIndex">
+								<xp:this.value><![CDATA[#{javascript:try {
+	var service = new com.ibm.sbt.services.client.connections.communities.CommunityService("connections");
+	return service.getPublicCommunities();
+} catch(e){
+}}]]></xp:this.value>
+								<xp:tr>
+									<xp:this.styleClass><![CDATA[#{javascript:return(communityIndex==0)? "lotusFirst":""}]]></xp:this.styleClass>
+									<xp:td>
+										<h4>
+											<xp:link escape="true" id="link1"
+												text="#{javascript:community.getTitle()}">
+
+												<xp:eventHandler event="onclick" submit="true"
+													refreshMode="complete">
+													<xp:this.action>
+
+														<xp:actionGroup>
+
+															<xp:executeScript>
+																<xp:this.script><![CDATA[#{javascript:sessionScope.put("community", community)}]]></xp:this.script>
+															</xp:executeScript>
+															<xp:openPage name="/community.xsp">
+
+															</xp:openPage>
+
+														</xp:actionGroup>
+													</xp:this.action>
+												</xp:eventHandler>
+											</xp:link>
+										</h4>
+									</xp:td>
+								</xp:tr>
+								<xp:tr styleClass="lotusMeta lotusFirst">
+									<xp:td>
+										<xp:label value="ID:" id="label1">
+										</xp:label>
+										<xp:text escape="true" id="computedField1"
+											value="#{javascript:community.getCommunityUuid()}">
+										</xp:text>
+										<xp:span styleClass="lotusDivider">
+											|
+											<xp:this.attrs>
+												<xp:attr name="role" value="separator">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:span>
+										<xp:label value="Tags:" id="label2">
+										</xp:label>
+										<xp:repeat id="repeat2" rows="30"
+											value="#{javascript:community.getTags()}" var="tag"
+											disableOutputTag="true">
+											<xp:link text="#{javascript:tag}" id="label3"
+												styleClass="lotusPerson">
+											</xp:link>
+											&#160;
+										</xp:repeat>
+
+									</xp:td>
+								</xp:tr>
+							</xp:repeat>
+						</tbody>
+					</xp:table>
+				</xe:widgetContainer>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+		<xp:eventHandler event="onClientLoad" submit="true"
+			refreshMode="norefresh">
+			<xp:this.action><![CDATA[#{javascript:sessionScope.put("memberId", null)}]]></xp:this.action>
+		</xp:eventHandler>
+</xp:view>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="Controls">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:table>
+					<xp:tr>
+						<xp:td>
+							<xp:text escape="true" id="computedField1" tagName="h2"
+								styleClass="lotusHeading">
+								<xp:this.value><![CDATA[#{javascript:"View"}]]></xp:this.value>
+							</xp:text>
+						</xp:td>
+						<xp:td>
+							<xp:text escape="true" id="computedField2" tagName="h2"
+								styleClass="lotusHeading">
+								<xp:this.value><![CDATA[#{javascript:"Combobox"}]]></xp:this.value>
+							</xp:text>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:viewPanel rows="30" id="viewPanel1" var="viewData">
+								<xp:this.facets>
+									<xp:pager partialRefresh="true" layout="Previous Group Next"
+										xp:key="headerPager" id="pager1">
+									</xp:pager>
+								</xp:this.facets>
+								<xp:this.data>
+									<xp:dominoView var="view1" viewName="vwRNRAll">
+									</xp:dominoView>
+								</xp:this.data>
+								<xp:viewColumn columnName="$3" id="viewColumn1">
+									<xp:viewColumnHeader id="viewColumnHeader1"
+										value="Category">
+									</xp:viewColumnHeader>
+								</xp:viewColumn>
+								<xp:viewColumn columnName="$4" id="viewColumn2">
+									<xp:viewColumnHeader value="Name"
+										id="viewColumnHeader2">
+									</xp:viewColumnHeader>
+								</xp:viewColumn>
+								<xp:viewColumn id="viewColumn3">
+									<xp:this.facets>
+										<xp:viewColumnHeader xp:key="header"
+											id="viewColumnHeader3">
+										</xp:viewColumnHeader>
+									</xp:this.facets>
+									<xp:this.iconSrc><![CDATA[#{javascript:var iconNumber = viewData.getColumnValues().elementAt(2);
+@ViewIconUrl(iconNumber)}]]></xp:this.iconSrc>
+									<xp:this.value><![CDATA[#{javascript:""}]]></xp:this.value>
+								</xp:viewColumn>
+							</xp:viewPanel>
+						</xp:td>
+						<xp:td>
+							<xp:comboBox id="comboBox1">
+								<xp:selectItems>
+									<xp:this.value><![CDATA[#{javascript:@Text("")}]]></xp:this.value>
+								</xp:selectItems>
+								<xp:selectItems>
+									<xp:this.value><![CDATA[#{javascript:control.options}]]></xp:this.value>
+								</xp:selectItems>
+
+							</xp:comboBox>
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

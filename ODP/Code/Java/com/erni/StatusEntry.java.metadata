@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="556" sequence="13" unid="234E720BB30B8C61C1257BFF002DEE23">
+<created><datetime dst="true">20131009T102140,83+02</datetime></created>
+<modified><datetime dst="true">20131009T185047,64+02</datetime></modified>
+<revised><datetime dst="true">20131009T102359,07+02</datetime></revised>
+<lastaccessed><datetime dst="true">20131009T185047,64+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131009T185047,64+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/erni/StatusEntry.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/erni/StatusEntry.java</text></item>
+
+</note>

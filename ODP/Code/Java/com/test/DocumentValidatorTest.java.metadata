@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2242" sequence="8" unid="A26F9F22B7D83953C1257D920066A33C">
+<created><datetime>20141116T194104,60+01</datetime></created>
+<modified><datetime>20141117T183317,07+01</datetime></modified>
+<revised><datetime>20141116T194127,14+01</datetime></revised>
+<lastaccessed><datetime>20141117T183317,07+01</datetime></lastaccessed>
+<addedtofile><datetime>20141117T183317,07+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/test/DocumentValidatorTest.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/test/DocumentValidatorTest.java</text></item>
+
+</note>

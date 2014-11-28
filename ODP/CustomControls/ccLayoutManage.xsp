@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:bundle src="/app.properties" var="app"></xp:bundle>
+	</xp:this.resources>
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+	<xe:applicationLayout id="applicationLayout1">
+		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+
+		<xe:this.facets>
+			<xp:div xp:key="LeftColumn"></xp:div>
+
+
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+		</xe:this.facets>
+
+		<xe:this.configuration>
+			<xe:oneuiApplication
+				placeBarName="#{javascript:compositeData.pageTitle}"
+				productLogoStyle="margin-top:7px" footer="false" placeBar="false">
+				<xe:this.bannerUtilityLinks>
+
+					<xe:basicContainerNode label="Manage">
+						<xe:this.children>
+							<xe:basicLeafNode label="Fake names"
+								href="/fakenames.xsp">
+
+							</xe:basicLeafNode>
+							<xe:basicLeafNode label="Vacation cheques"
+								href="/vaccheques.xsp">
+
+							</xe:basicLeafNode>
+						</xe:this.children>
+						<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xe:this.loaded>
+					</xe:basicContainerNode>
+
+
+
+
+
+
+					<xe:basicContainerNode>
+						<xe:this.label><![CDATA[#{javascript:@Name("[Abbreviate]", session.getEffectiveUserName())}]]></xe:this.label>
+						<xe:this.children>
+							<xe:pageTreeNode label="My Profile"
+								page="/profile.xsp">
+							</xe:pageTreeNode>
+						</xe:this.children>
+						<xe:this.loaded><![CDATA[${javascript:@UserName()!="Anonymous"}]]></xe:this.loaded>
+					</xe:basicContainerNode>
+					<xe:loginTreeNode label="Login">
+						<xe:this.loaded><![CDATA[${javascript:session.getEffectiveUserName()=="Anonymous"}]]></xe:this.loaded>
+					</xe:loginTreeNode>
+
+
+
+
+
+					<xe:loginTreeNode label="Logout">
+						<xe:this.loaded><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous"}]]></xe:this.loaded>
+					</xe:loginTreeNode>
+
+
+
+
+				</xe:this.bannerUtilityLinks>
+
+
+				<xe:this.bannerApplicationLinks>
+
+
+
+
+
+					<xe:basicLeafNode label="#{javascript:@DbTitle()}"
+						selected="true">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="OpenNTF">
+						<xe:this.onClick><![CDATA[window.open("http://www.openntf.org")]]></xe:this.onClick>
+					</xe:basicLeafNode>
+
+
+					<xe:basicLeafNode label="OSnippets">
+						<xe:this.onClick><![CDATA[window.open("http://www.osnippets.org")]]></xe:this.onClick>
+					</xe:basicLeafNode>
+				</xe:this.bannerApplicationLinks>
+				<xe:this.titleBarTabs>
+
+
+					<xe:pageTreeNode label="Home" page="/index.xsp"></xe:pageTreeNode>
+					<xe:pageTreeNode label="Fake names"
+						page="/fakenames.xsp">
+					</xe:pageTreeNode>
+
+					<xe:pageTreeNode label="Vacation cheques"
+						page="/vaccheques.xsp">
+					</xe:pageTreeNode>
+
+				</xe:this.titleBarTabs>
+				<xe:this.placeBarActions>
+
+
+
+				</xe:this.placeBarActions>
+				<xe:this.legalText><![CDATA[#{javascript:app['applicationName']}, Release #{javascript:app['release']} | © 2013 Oliver Busse - Apache 2.0 License]]></xe:this.legalText>
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout>
+</xp:view>

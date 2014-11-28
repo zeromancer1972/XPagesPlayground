@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:junit="http://www.openntf.org/xsp/junit">
+
+	<xc:ccLayout pageTitle="JUnit">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<junit:testsuite id="testsuite1"><junit:this.testClasses><xp:value>com.test.DocumentValidatorTest</xp:value></junit:this.testClasses></junit:testsuite>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xc:ccLayoutManage pageTitle="Fakenames">
+		<xp:this.facets>
+			<xe:widgetContainer id="widgetContainer1"
+				xp:key="facetMiddle">
+				<xe:this.titleBarText><![CDATA[Manage the "Fake Names"]]></xe:this.titleBarText>
+				<xe:this.dropDownNodes>
+					<xe:basicLeafNode href="addname.xsp"
+						label="Create fake name">
+					</xe:basicLeafNode>
+				</xe:this.dropDownNodes>
+				<xp:panel id="fnView">
+					<xp:panel>
+						<xp:this.loaded><![CDATA[${javascript:try {
+var ft = database.isFTIndexed()
+return false
+}
+
+catch(e){
+	return true
+}}]]></xp:this.loaded>
+						<xp:text
+							value="the database is not fulltext-indexed">
+						</xp:text>
+
+					</xp:panel>
+					<xp:br></xp:br>
+					<xp:panel>
+						&#160;
+						<xp:this.loaded><![CDATA[${javascript:try {
+var ft = database.isFTIndexed()
+return true
+}
+catch(e){
+	return false
+}}]]></xp:this.loaded>
+						<xp:label value="Filter by" id="label1"></xp:label>
+						&#160;
+						<xp:inputText id="query">
+							<xp:eventHandler event="onkeyup"
+								submit="true" refreshMode="partial" refreshId="viewPanel1">
+							</xp:eventHandler>
+						</xp:inputText>
+
+					</xp:panel>
+					<xp:viewPanel rows="20" id="viewPanel1"
+						viewStyle="width:100.0%" pageName="/addname.xsp">
+						<xp:this.facets>
+							<xp:pager partialRefresh="true"
+								layout="Previous Group Next" xp:key="headerPager" id="pager1">
+							</xp:pager>
+						</xp:this.facets>
+						<xp:this.data>
+							<xp:dominoView var="view1"
+								viewName="ByName">
+
+								<xp:this.keys><![CDATA[#{javascript:try {
+getComponent("query").getValue()
+} catch(e) {
+return null
+}}]]></xp:this.keys>
+							</xp:dominoView>
+						</xp:this.data>
+						<xp:viewColumn columnName="lastname"
+							id="viewColumn1" displayAs="link">
+							<xp:viewColumnHeader value="Lastname"
+								id="viewColumnHeader1">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="firstname"
+							id="viewColumn2" displayAs="link">
+							<xp:viewColumnHeader value="Firstname"
+								id="viewColumnHeader2">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="address"
+							id="viewColumn3" displayAs="link">
+							<xp:viewColumnHeader value="Address"
+								id="viewColumnHeader3">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="state"
+							id="viewColumn4" displayAs="link">
+							<xp:viewColumnHeader value="State"
+								id="viewColumnHeader4">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="city"
+							id="viewColumn5" displayAs="link">
+							<xp:viewColumnHeader value="City"
+								id="viewColumnHeader5">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="zip" id="viewColumn6"
+							displayAs="link">
+							<xp:viewColumnHeader value="Zip"
+								id="viewColumnHeader6">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="country"
+							id="viewColumn7" displayAs="link">
+							<xp:viewColumnHeader value="Country"
+								id="viewColumnHeader7">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+					</xp:viewPanel>
+				</xp:panel>
+				<!-- fnView -->
+			</xe:widgetContainer>
+
+
+
+		</xp:this.facets>
+	</xc:ccLayoutManage>
+</xp:view>

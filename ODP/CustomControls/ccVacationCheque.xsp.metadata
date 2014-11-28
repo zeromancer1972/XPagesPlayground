@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1f2" sequence="31" unid="3E951C1FF2AD0867C1257B8500639CAE">
+<created><datetime dst="true">20130609T200801,74+02</datetime></created>
+<modified><datetime dst="true">20140919T180310,30+02</datetime></modified>
+<revised><datetime dst="true">20140919T145650,93+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140919T180310,30+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130609T200801,75+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>ccVacationCheque.xsp</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>ccVacationCheque.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+</note>

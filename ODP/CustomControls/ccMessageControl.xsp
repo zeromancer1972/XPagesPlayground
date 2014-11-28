@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+ <xp:this.beforeRenderResponse>
+  <![CDATA[#{javascript:function addChildrenClientIds(component:javax.faces.component.UIComponentBase, clientIds:java.util.ArrayList) {
+ try {
+  var children = component.getChildren();
+   
+  for (var child in children) {
+   clientIds.add(child.getClientId(facesContext));
+   if (child.getChildCount() > 0) {
+    addChildrenClientIds(child, clientIds);
+   }
+  }
+ } catch (e) {
+  /*Debug.logException(e);*/
+ }
+}
+ 
+try {
+ var messageObjects = [];
+ var messageClientIds = facesContext.getClientIdsWithMessages();
+  
+ // There are messages for components - Get client ids in sorted order
+ if (messageClientIds.hasNext()) {
+  var clientIds = new java.util.ArrayList();
+  addChildrenClientIds(view, clientIds);
+ }
+  
+ // Used to keep track of which messages are for components
+ var componentMessages = new java.util.ArrayList();
+  
+ while (messageClientIds.hasNext()) {
+  var clientId = messageClientIds.next();
+  if( !clientId ){ continue; }
+   
+  var component = view.findComponent( clientId.replace( view.getClientId( facesContext ), '').replace( /\:\d*\:/g, ':') );
+  if (!component) { continue; }
+   
+  // Fetch messages for component
+  var message = '',
+  messages = facesContext.getMessages( clientId );
+  while (messages.hasNext()) {
+   var messageItem = messages.next();
+   message += (message) ? ', ' : '' + messageItem.getSummary();
+    
+   componentMessages.push( messageItem );
+  }
+   
+  // If component has label - fetch
+  var labelComponent = getLabelFor(component);
+  var label = (labelComponent) ? labelComponent.getValue() : '';
+  if (!label && component) {
+   var id = component.getId();
+   if (id.indexOf('_') > 0) {
+    label = id;
+   }
+  }
+   
+  if (label && label.indexOf(':') === -1) {
+   label += ':';
+  }
+   
+  messageObjects.push({
+   index : clientIds.indexOf(clientId),
+   clientId : clientId,
+   label : label,
+   message : message
+  });
+ }
+  
+ // Sort message object by the order of the components in the page
+ messageObjects.sort(function (a, b) {
+  if (a.index > b.index) { return 1; }
+  if (a.index < b.index) { return -1; }
+  return 0;
+ });
+  
+ // Add all (if any) system messages at the top
+ var allMessages = facesContext.getMessages();
+ while( allMessages.hasNext() ){
+  messageItem = allMessages.next(); 
+  if( !componentMessages.contains( messageItem ) ){  
+   messageObjects.unshift({ message: messageItem.getSummary() });
+  }
+ }
+  
+ viewScope.messageObjects = messageObjects;
+} catch (e) {
+ /*Debug.logException(e);*/
+}
+}]]></xp:this.beforeRenderResponse>
+ <xp:scriptBlock>
+  <xp:this.value><![CDATA[var EMessages = {
+ // Set focus to field
+ setFocus: function( clientId ){
+  var matchingFields = dojo.query('[name=' + clientId + ']');
+  if( matchingFields.length > 0 ){
+   if( dijit && dijit.registry ){
+    this.showDojoTabWithField( clientId );
+   }
+   var field = matchingFields[0]
+   field.focus();
+   dojo.animateProperty({
+    duration: 800,
+    node: field,
+    properties: {
+     backgroundColor: {
+      start: '#FFFFEE',
+      end: dojo.style( field, 'backgroundColor' )
+     }
+    }
+   }).play();
+  }
+  return false;
+ },
+  
+ // If field is inside a dijit TabContainer - activate
+ showDojoTabWithField: function( clientId ){
+  dijit.registry.byClass("dijit.layout.TabContainer").forEach(function( tabContainer ){
+   dojo.forEach( tabContainer.getChildren(), function( containerPane ){
+    if( dojo.query( containerPane.containerNode ).query( '[name=' + clientId + ']' ).length > 0 ){
+     tabContainer.selectChild( containerPane );
+    }
+   });
+  });
+ }
+}]]></xp:this.value>
+ </xp:scriptBlock>
+ <xp:repeat id="messageRepeat" styleClass="xspMessage" rows="30" value="#{viewScope.messageObjects}" var="messageObject">
+  <xp:this.rendered><![CDATA[#{javascript:return ( viewScope.messageObjects && viewScope.messageObjects.length > 0 ); }]]></xp:this.rendered>
+  <xp:this.facets>
+   <xp:text xp:key="header" escape="false">
+    <xp:this.value><![CDATA[<ul>]]></xp:this.value>
+   </xp:text>
+   <xp:text xp:key="footer" escape="false">
+    <xp:this.value><![CDATA[</ul>]]></xp:this.value>
+   </xp:text>
+  </xp:this.facets>
+  <li>
+   <xp:panel rendered="#{!empty(messageObject.clientId)}">
+    <a href="#" onclick="return EMessages.setFocus( '#{messageObject.clientId}');">
+     <xp:text escape="false">
+      <xp:this.value><![CDATA[#{javascript:return (messageObject.label) ? messageObject.label : messageObject.message;
+}]]></xp:this.value>
+     </xp:text>
+    </a>
+   </xp:panel>
+   <xp:text value="#{messageObject.message}" rendered="#{javascript:return (messageObject.label != '');}" />
+  </li>
+ </xp:repeat>
+</xp:view>

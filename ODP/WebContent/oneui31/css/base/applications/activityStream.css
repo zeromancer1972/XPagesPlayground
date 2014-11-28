@@ -1,0 +1,359 @@
+/* Copyright IBM Corp. 2012, 2013  All Rights Reserved.              */
+
+.lotusui .lotusPost a.lotusHidden {
+    display: none;
+}
+
+.lotusui .lotusPost li.lotusHidden {
+    display: none;
+}
+
+/** Should be able to remove both these lotusDelete styles */
+.lotusBoard .lotusPost .lotusDelete {
+    visibility: hidden;
+}
+
+.lotusBoard .lotusPostHover .lotusDelete {
+    visibility: visible;
+}
+
+.activityStreamImageUpload {
+    max-height: 60px;
+    max-width: 240px;
+}
+
+.activityStreamPhotoOf {
+    width: 48px; 
+    height: 48px;
+}
+
+.activityStreamSummary .activityStreamPhotoOf,
+.lotusCommentList .activityStreamPhotoOf {
+    width: 32px; 
+    height: 32px;
+}
+
+.lotusui_ie .lotusPaging .lotusLeft .asFilterMenu {
+    margin-right: 4px;
+    margin-left: 0;
+}
+
+.lotusPaging .lotusLeft .activityStreamFilterMenu {
+    margin-left: 4px;
+}
+
+.lotusui30 .pagingHandler .lotusFeeds {
+    margin: 10px 10px 5px 10px;
+}
+
+.lotusui30 .pagingHandler .lotusFeeds .lotusFeed {
+    margin-right: 0px;
+}
+
+/* Should be removable with One UI 3.0.3 */
+.lotusui30 .lotusBoard .activityStreamSummary .lotusPostAuthorInfo {
+    padding: 0 10px 0 0;
+    margin-bottom: 5px;
+}
+
+.lotusui30 .lotusBoard ul.lotusCommentList li.lotusCommentItem.lotusHidden {
+    display: none;
+}
+
+/* Needed to override the lotusPostAuthorInfo setting of 'display:block' */
+.lotusui30 div.lotusHidden {
+    display: none;
+}
+
+.activityStreamHeader {
+    margin-bottom: 10px;
+}
+
+
+.activityStreamPage .sharebox .lotusStatusField {
+    -moz-box-shadow: 0 1px 5px #DDDDDD inset;
+    -webkit-box-shadow: 0 1px 5px #DDDDDD;
+    box-shadow: 0 1px 5px #DDDDDD;
+    color: #444444;
+}
+
+.activityStreamNoThumbnailTable {
+    width: 78px;
+    height: 78px;
+    background-color: #F2F2F2;
+    border: 1px dotted #B3B2AB;
+}
+
+.lotusui30.lotusImagesOff .activityStreamNoThumbnailTable {
+    display:none;
+}
+
+.activityStreamNoThumbnailCell {
+    border: 0 none;
+    color: #000000;
+    font-weight: normal;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusPost.activityStreamEEDisabled{
+    cursor: default;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusPost.activityStreamEEDisabled .lotusPostIndicator{
+    display: none;
+}
+
+.loaderMain {
+    padding-top:60px;
+    padding-bottom:60px;
+    text-align:center;
+}
+
+.loaderPaging {
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align:center;
+	border-left: 1px solid #d6d6d6;
+	border-right: 1px solid #d6d6d6;
+}
+
+.noContentItem {
+    border-bottom: 1px solid #E3E2E2;
+}
+.noContentItem div{
+    padding : 10px 0;
+    text-align:left;
+    font: 0.9em Arial,Helvetica,sans-serif;
+    color: #555
+}
+
+/* Connections Communities Activity Stream iWidget Styles */
+
+.lotusui .mm_iWidget .asCommunitiesBoard {
+    margin-top: 15px;
+}
+
+.lotusui .mm_iWidget .lotusWidgetBody{
+    border-width: 0;
+}
+
+.lotusui .mm_iWidget .lotusSection2 {
+    width: 100%;
+}
+
+.lotusui .mm_iWidget .lotusFieldHeader {
+    margin-bottom:5px;
+}
+
+/* Fix for IE so the top AS item can be highlighted. */
+.lotusui_ie .lotusui30 .lotusBoard.asCommunitiesBoard {
+    zoom: 0;
+}
+
+/**************************************/
+/***** F I L T E R   S T Y L E S ******/
+/**************************************/
+
+/* TODO: One UI should provide these styles */
+
+.lotusui .lotusContent .lotusStream .lotusPaging
+.lotusInlinelist a{
+    color: #444444;
+}
+
+.lotusui .lotusContent .lotusStream .lotusPaging
+.lotusInlinelist a.filterSelected{
+    color: #000000;
+    font-weight: bold;
+}
+
+/**************************************/
+/*** C O M M E N T S   S T Y L E S ****/
+/**************************************/
+
+/* Can be removed once we align with One UI 3.0.4 */
+.lotusui30 .lotusBoard .lotusStream .lotusCommentList:after {
+    left: 53px;
+}
+
+.lotusui .lotusCommentList .lotusPostDetails{
+    padding-top: 0;
+}
+
+.lotusui .lotusCommentList .lotusPostDetails p{
+    margin-top: 0;
+}
+
+.lotusui .lotusBoard .lotusCommentList .lotusPost .lotusPerson{
+    font-weight: normal;
+}
+
+.lotusui .lotusBoard .lotusCommentList .ariaCharCountLabel {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: absolute;
+}
+
+
+/**************************************/
+/***           S A V E D           ****/
+/**************************************/
+
+.lotusui .lotusContent .lotusPost .activityStreamActionInactive a{  
+    text-decoration: none;
+    color: #222222;
+    cursor: default;
+}
+
+.lotusBoard .lotusActions{
+    visibility: hidden;
+}
+
+.lotusBoard .lotusPostHover .lotusActions{
+    visibility: visible;
+}
+
+.lotusui30 .lotusBoard ul.lotusStream > li.pagingHandler {
+    border-top: 1px solid #E3E2E2;
+}
+
+/** Following styles included to ensure line height is consistent
+    for ActivityStream entry expand/collapse not exhaustive and 
+    catches the main ckeditor included html */
+.lotusui30 .asLinkContainer p{
+    margin: 0 0 0;
+}
+
+.lotusui30 .asLinkContainer dd{
+    margin: 0 0 0;
+    padding: 0 0 0;
+}
+
+.lotusui30 .asLinkContainer dt{
+    margin: 0 0 0;
+    padding: 0 0 0;
+}
+.lotusui30 .asLinkContainer sub{
+    vertical-align:text-bottom; 
+    font-size:75%;
+}
+
+.lotusui30 .asLinkContainer sup{
+    vertical-align:text-top; 
+    font-size:75%;
+}
+
+/** Table styles applied to tables included within the
+    ActivityStream summary/comment sections */
+.lotusui30 .asLinkContainer table{
+    border: 1px solid #E3E2E2;
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+.lotusui30 .asLinkContainer table tr td{
+    border: 1px solid #E3E2E2;
+    border-collapse: collapse;
+}
+
+/** Scroll horizontal on overflow x ActivityStream summary/comments */
+.lotusui30 .asLinkContainer{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    position: relative;
+}
+
+/** ensure all images scale to activitystream view */
+.lotusui30 .asLinkContainer img{
+    border: 0 none;
+    line-height: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    display: block;
+}
+
+.lotusui30 .asLinkContainer .repostIcon img{
+    display: inline;
+}
+
+.lotusui30  .lotusInlinelist li.lotusRight.lotusActions{
+    border-left-width: 0;
+    margin-top : 1px;
+    padding-right: 8px;
+    font-size: 1.0em
+}
+
+.lotusui30 .lotusBoard .pagingHandler div.lotusAction.lotusHidden {
+    display : none;
+}
+
+/** Defect in One UI also where comments overlapped profiles pic.
+    May be fixed in One UI 3.0.4 */
+.lotusui30 .lotusStream .lotusCommentList{
+    clear: both;
+}
+
+.lotusui30 .lotusStream .lotusCommentList .lotusDelete{
+    position:relative; 
+    float:right;
+    padding-top:0;
+    padding-right:0;
+    top: 3px
+}
+
+.lotusStream .lotusCommentList .lotusMessage .asCommentError {
+    display: inline-block;
+}
+
+.lotusui_ie .lotusui30 .lotusStream .lotusCommentList div.lotusPostContent{
+    position:static;
+}
+
+.lotusui30 .lotusWidgetBody .lotusPagingTop.lotusPaging.asNoTopPaging {
+     border-top-width: 0;
+     margin-top: 0;
+}
+
+.lotusui30 .lotusBoard .lotusStream > li{
+     padding: 0;
+}
+
+
+.lotusui_ie7  .lotusui30 .lotusBoard .lotusStream  .activityStreamNewsItemContainer.lotusPost {
+    vertical-align: bottom;
+}
+
+/* Activity Stream Error Message */
+.lotusui30 .lotusBoard .lotusStream .activityStreamErrorMessage{
+    text-align: center;
+}
+
+.lotusui30 .lotusBoard .lotusStream .activityStreamErrorMessage .lotusMessage2{
+    margin-bottom: 0;
+}
+
+/* Temporary fix until we move up to OneUI 3.0.4 that allows tabbing to EE Opener. */
+.lotusui30 .lotusPost .lotusPostIndicator a {
+    height: 14px;
+    width: 14px;
+}
+
+/* Used for the ActivityStream gadget */
+.activityStreamGadgetContainer {
+    padding: 5px;
+}
+
+/* Used to highlight the current Activity Stream item in High Contrast mode. */
+.dijit_a11y .lotusBoard .lotusStream .lotusPostHover {
+    border: 1px solid;
+}
+
+/* Used to highlight the current selected Activity Stream item in High Contrast mode. */
+.dijit_a11y .lotusBoard .lotusStream .lotusPostSelected {
+    border: 1px solid;
+}

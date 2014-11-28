@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="umlaute"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:button value="save" id="button1"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:saveDocument var="document1"></xp:saveDocument>
+	</xp:this.action></xp:eventHandler></xp:button>
+	<xp:br></xp:br>
+	<xp:table>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Blödes feld:" id="blödesFeld_Label1"
+					for="blödesFeld1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{document1.blödesFeld}"
+					id="blödesFeld1">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+	</xp:table></xp:view>

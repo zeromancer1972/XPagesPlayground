@@ -1,0 +1,52 @@
+/* OneUI tweaks */
+.lotusui30dojo h1 {
+	font-size: 1.83333em;
+	font-weight: normal;
+}
+
+.lotusui30 .lotusBanner .lotusInner,.lotusui30 .lotusBannerExt .lotusWrapper,.lotusui30 .lotusTitleBar2 .lotusWrapper,.lotusui30 .lotusTitleBarExt .lotusWrapper,.lotusui30_body .lotusMain,.lotusui30 .lotusPlaceBar
+	{
+	margin: 0 auto;
+	padding: 0 5px;
+	min-width: 950px !important;
+	max-width: 1560px !important;
+}
+
+.lotusui30 .lotusBanner ul.lotusInlinelist li a {
+	padding: 15px;
+}
+
+.lotusui30 .lotusPlaceBar h2 { /*padding-left: 20px;*/
+	
+}
+
+/* dialog issues */
+.lotusui30 .lotusDialog h1,.lotusui30 .lotusDialog h2 {
+	background: none;
+}
+
+.lotusui30 .lotusDialog .lotusFormTable,.lotusui30 .lotusDialog .lotusFormTable td
+	{
+	padding: 0 10px 0 0;
+}
+
+fieldset {
+	border: 0 none;
+	margin-left: -25px !important;
+	background-color: transparent !important;
+}
+
+.lotusui30 .lotusDialog .lotusFormTable,.lotusui30 .lotusDialog .lotusFormTable td,.lotusui30 .lotusDialog .lotusDialogContent
+	{
+	max-height: 500px;
+}
+
+/* custom styles */
+.dataRow {
+	border-bottom: 1px dotted #ccc;
+	padding: 5px 0 5px 0;
+}
+
+.dataRow:hover {
+	background-color: #f8f8f8;
+}

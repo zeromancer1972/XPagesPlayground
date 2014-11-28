@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="doc"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:ccLayout pageTitle="Document Validator">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:div>
+					<xp:inputText id="inputText1" value="#{document1.numbervalue}">
+						<xp:this.converter>
+							<xp:convertNumber type="number"></xp:convertNumber>
+						</xp:this.converter>
+					</xp:inputText>
+
+					&#160;
+					<xp:button value="Validate" id="button1">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="computedField1">
+							<xp:this.action><![CDATA[#{javascript:docvalidator.validate(document1)}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:br />
+					<xp:text escape="true" id="computedField1" value="#{viewScope.validationResult}">
+					</xp:text>
+				</xp:div>
+				<xp:div>
+					<xp:inputRichText id="inputRichText1"
+						value="#{document1.rtf}">
+					</xp:inputRichText>
+					&#160;
+					<xp:button value="Validate" id="button2">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="computedField2">
+							<xp:this.action><![CDATA[#{javascript:var rtfv:com.data.RichTextValidator = new com.data.RichTextValidator();
+rtfv.validate(document1, "rtf");}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:br />
+					<xp:text escape="true" id="computedField2">
+						<xp:this.value><![CDATA[#{javascript:var empty = viewScope.get("rtf_isEmpty") ? "yes" : "no";
+var attachments = viewScope.get("rtf_isAttachments") ? "yes" : "no";
+return "isEmpty: "+empty+", isAttachments: "+attachments}]]></xp:this.value>
+					</xp:text>
+				</xp:div>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

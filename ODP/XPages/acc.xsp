@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xe:accordion id="accordion1">
+		<xe:this.treeNodes>
+			<xe:basicContainerNode label="foo">
+				<xe:this.children>
+					<xe:basicLeafNode label="bar"></xe:basicLeafNode>
+				</xe:this.children>
+			</xe:basicContainerNode>
+			<xe:basicContainerNode label="second"></xe:basicContainerNode>
+		</xe:this.treeNodes>
+	</xe:accordion></xp:view>

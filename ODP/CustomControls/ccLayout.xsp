@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.resources>
+		<xp:bundle src="/app.properties" var="app"></xp:bundle>
+	</xp:this.resources>
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+	<xe:applicationLayout id="applicationLayout1">
+		<xp:div>
+			<xp:text escape="true" id="computedField1"
+				value="#{javascript:compositeData.pageTitle}" tagName="h1"
+				styleClass="lotusHeader">
+			</xp:text>
+			<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+		</xp:div>
+
+
+		<xe:this.facets>
+			<xp:div xp:key="LeftColumn">
+				<xp:div style="height:90px;"></xp:div>
+				<xe:navigator id="navigator1" styleClass="navEntry">
+					<xe:this.treeNodes>
+
+
+						<xe:pageTreeNode label="Readers'n'Authors"
+							page="/readersnauthors.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Multi NAB Entries"
+							page="/nabentries.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Dojo Dialog Form"
+							page="/dialogform.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="ControlHelper"
+							page="/controls.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Mobile Fake Names"
+							page="/m_names.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Jackson Demo"
+							page="/jackson.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Custom Theme IDs"
+							page="/themeid.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="JSON Tests"
+							page="/json.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Dialogs"
+							page="/dialogs.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="Document Entity"
+							page="/documentEntity.xsp">
+						</xe:pageTreeNode>
+						<xe:pageTreeNode label="JUnit"
+							page="/junit.xsp">
+						</xe:pageTreeNode>
+					</xe:this.treeNodes>
+				</xe:navigator>
+
+			</xp:div>
+
+
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+		</xe:this.facets>
+
+		<xe:this.configuration>
+			<xe:oneuiApplication productLogoStyle="margin-top:7px"
+				footer="false" placeBarName="#{javascript:compositeData.pageTitle}"
+				placeBar="false">
+				<xe:this.bannerUtilityLinks>
+
+					<xe:basicContainerNode label="Manage">
+						<xe:this.children>
+							<xe:basicLeafNode label="Fake names" href="/fakenames.xsp">
+
+							</xe:basicLeafNode>
+							<xe:basicLeafNode label="Vacation cheques" href="/vaccheques.xsp">
+
+							</xe:basicLeafNode>
+						</xe:this.children>
+						<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xe:this.loaded>
+					</xe:basicContainerNode>
+
+
+
+
+
+
+					<xe:basicContainerNode>
+						<xe:this.label><![CDATA[#{javascript:@Name("[Abbreviate]", session.getEffectiveUserName())}]]></xe:this.label>
+						<xe:this.children>
+							<xe:pageTreeNode label="My Profile" page="/profile.xsp">
+							</xe:pageTreeNode>
+						</xe:this.children>
+						<xe:this.loaded><![CDATA[${javascript:@UserName()!="Anonymous"}]]></xe:this.loaded>
+					</xe:basicContainerNode>
+
+
+
+
+
+
+
+
+
+
+
+					<xe:basicLeafNode onClick="dialogLogin()">
+						<xe:this.label><![CDATA[#{javascript:return (session.getEffectiveUserName().equals("Anonymous")) ? "Login" : "Logout"}]]></xe:this.label>
+					</xe:basicLeafNode>
+				</xe:this.bannerUtilityLinks>
+
+
+				<xe:this.bannerApplicationLinks>
+					<xe:basicLeafNode label="#{javascript:@DbTitle()}"
+						selected="true">
+					</xe:basicLeafNode>
+					<xe:basicContainerNode label="Community">
+						<xe:this.children>
+							<xe:basicLeafNode label="OpenNTF">
+								<xe:this.onClick><![CDATA[window.open("http://www.openntf.org")]]></xe:this.onClick>
+							</xe:basicLeafNode>
+							<xe:basicLeafNode label="OSnippets">
+								<xe:this.onClick><![CDATA[window.open("http://www.osnippets.org")]]></xe:this.onClick>
+							</xe:basicLeafNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+
+				</xe:this.bannerApplicationLinks>
+				<xe:this.titleBarTabs>
+
+
+					<xe:pageTreeNode label="Home" page="/index.xsp"></xe:pageTreeNode>
+
+
+					<xe:pageTreeNode label="OpenNTF Domino API" page="/openntfapi.xsp">
+						<xe:this.rendered><![CDATA[#{javascript:return context.getProperty("xsp.library.depends").indexOf("org.openntf.xpt")!=-1}]]></xe:this.rendered>
+					</xe:pageTreeNode>
+
+
+
+
+
+
+
+					<xe:pageTreeNode label="IBM Social Business Toolkit"
+						page="/connections.xsp">
+					</xe:pageTreeNode>
+
+
+
+
+
+					<xe:pageTreeNode label="POI4XPages" page="/poi.xsp">
+					</xe:pageTreeNode>
+
+
+					<xe:pageTreeNode label="Document locking" page="/locked.xsp">
+					</xe:pageTreeNode>
+				</xe:this.titleBarTabs>
+				<xe:this.placeBarActions>
+
+
+
+				</xe:this.placeBarActions>
+				<xe:this.legalText><![CDATA[#{javascript:app['applicationName']}, Release #{javascript:app['release']} | © 2013 Oliver Busse - Apache 2.0 License]]></xe:this.legalText>
+
+				<xe:this.titleBarName><![CDATA[&#160;]]></xe:this.titleBarName>
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout>
+
+	<xc:dlgLogin></xc:dlgLogin>
+</xp:view>

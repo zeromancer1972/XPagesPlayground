@@ -1,0 +1,23 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+%REM
+	Library foobar
+	Created Sep 19, 2014 by Oliver Busse/ulcbs
+	Description: Comments for Library
+%END REM
+Option Public
+Option Declare
+
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Sub Initialize
+
+'++LotusScript Development Environment:2:5:(Declarations):0:2
+
+'++LotusScript Development Environment:2:2:Initialize:1:10
+Sub Initialize
+	If(0=1) Then
+		
+	Else
+		
+	End If
+End Sub

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.data>
+		<xe:objectData var="newDocument"
+			createObject="#{javascript:documentBean.createObject();}">
+		</xe:objectData>
+	</xp:this.data>
+
+	<xp:button value="New Document" id="button1">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial">
+			<xp:this.action><![CDATA[#{javascript:getComponent("dlgDocumentNew").show();}]]></xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+
+	<xe:dialog id="dlgDocumentNew">
+		<xe:dialogContent>
+			<xe:formRow id="formRow1" label="Content">
+				<xp:inputText id="inputText1"
+					value="#{newDocument.content}">
+				</xp:inputText></xe:formRow>
+
+		</xe:dialogContent>
+		<xe:dialogButtonBar id="dialogButtonBar1">
+			<xp:button value="Save" id="button2">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:documentBean.saveDocument(newDocument)}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button value="Cancel" id="button3">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="partial">
+					<xp:this.action><![CDATA[#{javascript:getComponent("dlgDocumentNew").hide();}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</xe:dialogButtonBar>
+	</xe:dialog>
+
+</xp:view>

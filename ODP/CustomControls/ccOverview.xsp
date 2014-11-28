@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view id="view1" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core">
+  <xe:djxmHeading id="djxmHeading1" label="Overview">
+    <xp:this.facets>
+      <xp:panel xp:key="actionFacet">
+        <xe:toolBarButton id="toolBarButton1" label="New">
+          <xp:eventHandler event="onClick" id="eventHandler1"
+            refreshMode="complete" submit="true">
+            <xe:this.action>
+              <xe:moveTo direction="Left to Right"
+                forceFullRefresh="true" targetPage="Customer" transitionType="slide"/>
+            </xe:this.action>
+          </xp:eventHandler>
+        </xe:toolBarButton>
+      </xp:panel>
+    </xp:this.facets>
+  </xe:djxmHeading>
+  <xp:this.data>
+    <xp:dominoView var="OverviewView" viewName="ByName"/>
+  </xp:this.data>
+  <xe:dataView id="dataView1" infiniteScroll="enable"
+    openDocAsReadonly="true" pageName="Customer" value="#{OverviewView}">
+    <xe:this.summaryColumn>
+      <xe:viewSummaryColumn columnName="lastname"/>
+    </xe:this.summaryColumn>
+  </xe:dataView>
+</xp:view>

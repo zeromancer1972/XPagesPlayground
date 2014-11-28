@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	foo bar
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	COOL!
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:message id="message1" for="checkBoxGroup1"></xp:message>
+	<xp:checkBoxGroup id="checkBoxGroup1">
+		<xp:this.validators>
+			<xp:validateRequired></xp:validateRequired>
+		</xp:this.validators></xp:checkBoxGroup></xp:view>

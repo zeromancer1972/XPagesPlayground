@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.2'
+ replicaid='C1257B84006F3FC1'>
+<noteinfo noteid='5b6' unid='BC556DF4224C05E4C1257C3C002C400D' sequence='4'>
+<created><datetime>20131209T090319,81+01</datetime></created>
+<modified><datetime>20131209T170030,42+01</datetime></modified>
+<revised><datetime>20131209T090409,93+01</datetime></revised>
+<lastaccessed><datetime>20131209T170030,42+01</datetime></lastaccessed>
+<addedtofile><datetime>20131209T170030,42+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$Flags'><text/></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>lock</text></item>
+<item name='lockUNID' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='lockUser' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='lockTimestamp' summary='false' sign='true'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>lockTimestamp</text><text>lockUser</text><text
+>lockUNID</text></textlist></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAArdBgAAiv/+/1AA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAIr/LACKAAAFADACAAAAAAAAAgEAAAoAAAAAAAAAAAgAAAAAAGxv
+Y2tVTklEYg4BAIQAAAAAAAAAAADeBgAAiv+F/wgAAQAACt0GAACK//7/UAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAiv8sAIoAAAUAMAIAAAAAAAACAQAACgAAAAAAAAAACAAAAAAAbG9ja1VzZXJiDgEAhAAA
+AAAAAAAAAN4GAACK/4X/CAABAAAK3QYAAIr//v9UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAeAB4AAAAAAAASIADAAAAAAABAgICAQEBAQcEAAAAAAAAAAAAAAAAAAAgLi46iv8y
+AIoAAAQAMAIAAAAAAAAAAQAACgAAAAAAAAAADQAAAAAAbG9ja1RpbWVzdGFtcADeBgAAiv+F/wgA
+AQAACg==
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>frmLock</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+

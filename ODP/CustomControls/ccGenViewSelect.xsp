@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:table style="width:100%">
+		<xp:tr>
+			<xp:td style="width:200px">
+				<xp:label value="Database" id="label1"></xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText id="inputText1" value="#{viewScope.database}"
+					style="width:300px" defaultValue="#{javascript:database.getFilePath()}">
+				</xp:inputText>
+				
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="View" id="label2"></xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText id="inputText2" value="#{viewScope.view}"
+					style="width:300px" defaultValue="ByName">
+				</xp:inputText>
+				
+			</xp:td>
+		</xp:tr>
+	<xp:tr><xp:td></xp:td><xp:td>
+	<xp:button value="refresh" id="button1">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial" refreshId="#{javascript:compositeData.refreshId}">
+		</xp:eventHandler></xp:button></xp:td></xp:tr></xp:table>
+</xp:view>

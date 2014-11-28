@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2222" sequence="20" unid="F5F12598E1C58C35C1257D69005CE18F">
+<created><datetime dst="true">20141006T185430,55+02</datetime></created>
+<modified><datetime dst="true">20141007T140553,63+02</datetime></modified>
+<revised><datetime dst="true">20141006T192136,83+02</datetime></revised>
+<lastaccessed><datetime dst="true">20141007T140553,63+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20141007T140553,63+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/data/model/DocumentSessionFacade.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/data/model/DocumentSessionFacade.java</text></item>
+
+</note>

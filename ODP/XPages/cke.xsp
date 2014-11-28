@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:inputRichText id="inputRichText1">
+		<xp:this.dojoAttributes>
+			<xp:dojoAttribute name="toolbar" value="Full">
+			</xp:dojoAttribute>
+		</xp:this.dojoAttributes></xp:inputRichText></xp:view>

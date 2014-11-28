@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="true"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.dataContexts>
+		<xp:dataContext var="document"
+			value="#{javascript:compositeData.doc}">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+
+	<xp:platformEvent id="platformEvent1" eventName="docSave">
+		<xp:eventHandler event="onevent" submit="true"
+			refreshMode="complete">
+			<xp:this.action><![CDATA[#{javascript:var authors = compositeData.author
+for(x=0; x<authors.length;x++){
+	var it:NotesItem = document.getDocument(true).getFirstItem(authors[x])
+	if(it!=null){
+		it.setAuthors(true)
+	}
+}}]]></xp:this.action>
+		</xp:eventHandler>
+	</xp:platformEvent>
+
+	<xp:div>
+		<xp:this.rendered><![CDATA[#{javascript:return @IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+		<h3>READER FIELDS</h3>
+		<ul>
+			<xp:repeat id="repeat1" rows="30"
+				value="#{javascript:compositeData.reader}" var="reader">
+				<li>
+					<xp:label id="label1">
+						<xp:this.value><![CDATA[#{javascript:reader+": "}]]></xp:this.value>
+					</xp:label>
+					<xp:label
+						value="#{javascript:document.getItemValue(reader)}" id="label4">
+					</xp:label>
+				</li>
+			</xp:repeat>
+		</ul>
+		<h3>AUTHOR FIELDS</h3>
+		<ul>
+			<xp:repeat id="repeat2" rows="30"
+				value="#{javascript:compositeData.author}" var="author">
+				<li>
+					<xp:label id="label2">
+						<xp:this.value><![CDATA[#{javascript:author+": "}]]></xp:this.value>
+					</xp:label>
+					<xp:label
+						value="#{javascript:document.getItemValue(author)}" id="label5">
+					</xp:label>
+				</li>
+			</xp:repeat>
+		</ul>
+
+		<xp:text id="label3" escape="false">
+			<xp:this.value><![CDATA[#{javascript:try {
+	return "<div class=\"lotusMessage lotusInfo\">Datasource ok, using form: " + compositeData.doc.getDocument(true).getItemValueString("Form") + "</div>";
+} catch(e){
+	return "<div class=\"lotusMessage lotusWarning\">No datasource defined</div>";
+}}]]></xp:this.value>
+		</xp:text>
+
+		<xp:button value="Save" id="button1">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action>
+					<xp:actionGroup>
+						<xp:saveDocument
+							var="#{javascript:compositeData.dataSource}">
+						</xp:saveDocument>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xp:div>
+</xp:view>

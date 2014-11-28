@@ -1,0 +1,71 @@
+
+	<!--
+		The default theme contents use theme inheritance. Application themes
+		can extend an existing global theme using the extends attribute.
+		Existing themes include the following options: 1. webstandard 2. oneui
+		3. notes
+	-->
+<theme extends="oneuiv3.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
+	<!--
+		Use this pattern to include resources (such as style sheets and
+		JavaScript files that are used by this theme.
+	-->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>oneui31/css/defaultTheme/defaultTheme.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>oneui31/css/defaultTheme/dojoTheme.css</href>
+	</resource>
+
+	<resource>
+		<content-type>text/css</content-type>
+		<href>adapt.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>styles.css</href>
+	</resource>
+
+
+	!-- set page title and favicon -->
+	<control override="false">
+		<!-- set a default page name unless you define it in the page itself -->
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>#{javascript:@DbTitle()}</value>
+		</property>
+	</control>
+
+	<control>
+		<!-- aligns text labels in a form table -->
+		<name>HtmlTr</name>
+		<property mode="concat">
+			<name>style</name>
+			<value>vertical-align:top</value>
+		</property>
+	</control>
+	<control>
+		<!-- set the cellpadding of tables -->
+		<name>HtmlTd</name>
+		<property mode="concat">
+			<name>style</name>
+			<value>padding:3px</value>
+		</property>
+	</control>
+
+	<control>
+		<name>HomepageLink</name>
+		<property>
+			<name>value</name>
+			<value>http://www.oliverbusse.com</value>
+		</property>
+		<property>
+			<name>target</name>
+			<value>_blank</value>
+		</property>
+	</control>
+</theme>

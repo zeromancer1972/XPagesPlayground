@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="YouTube Player" description="YouTube Player Using Embedded Experiences" height="400" width="700">
+    <Require feature="dynamic-height"></Require>
+  </ModulePrefs>
+  <Content type="html">
+   <![CDATA[
+     <script type="text/javascript">
+     function showPlayer(){
+       document.getElementById("player").innerHTML = 
+       '<object width="480" height="385">' + 
+         '<param name="movie" value="http://www.youtube.com/v/4eXXHmAHvDY?fs=1&amp;hl=en_US"></param>' +
+         '<param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>' +
+         '<embed src="http://www.youtube.com/v/4eXXHmAHvDY?fs=1&amp;hl=en_US"' + 
+           'type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480"' +
+           'height="385">' + 
+         '</embed>' +
+        '</object>';
+       gadgets.window.adjustHeight();
+     }
+ 
+     function initData() {
+     	showPlayer();
+     }
+ 
+     gadgets.util.registerOnLoadHandler(initData);
+   </script>
+ 
+   <div id="player">
+   </div>
+  ]]>
+  </Content>
+</Module>

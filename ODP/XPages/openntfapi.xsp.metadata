@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="26a" sequence="177" unid="E455343A7BF90C73C1257B9C00512A5E">
+<created><datetime dst="true">20130702T164632,62+02</datetime></created>
+<modified><datetime dst="true">20141016T191218,26+02</datetime></modified>
+<revised><datetime dst="true">20141016T191218,25+02</datetime></revised>
+<lastaccessed><datetime dst="true">20141016T191218,26+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130702T175153,47+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>openntfapi.xsp</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>openntfapi.xsp</text></item>
+
+</note>

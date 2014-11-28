@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xe:applicationLayout id="applicationLayout1">
+		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+		<xe:this.facets>
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+			<xp:callback facetName="facetLeft" id="facetLeft"
+				xp:key="LeftColumn">
+			</xp:callback>
+		</xe:this.facets>
+		<xe:this.configuration>
+			<xe:oneuiApplication titleBarName="Welcome"
+				placeBarName="Placebar" legalText="(C) by me">
+				<xe:this.footerLinks>
+					<xe:basicContainerNode label="Container 1">
+						<xe:this.children>
+							<xe:basicLeafNode label="Link 1" href="/"></xe:basicLeafNode>
+							<xe:basicLeafNode label="Link 2" href="/"></xe:basicLeafNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+					<xe:basicContainerNode label="Container 2">
+						<xe:this.children>
+							<xe:basicLeafNode label="Link 1" href="/"></xe:basicLeafNode>
+							<xe:basicLeafNode label="Link 2" href="/"></xe:basicLeafNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+				</xe:this.footerLinks>
+				<xe:this.bannerUtilityLinks>
+					<xe:loginTreeNode label="Login"></xe:loginTreeNode>
+				</xe:this.bannerUtilityLinks>
+				<xe:this.searchBar>
+					<xe:appSearchBar pageName="/search.xsp"
+						optionsParam="query">
+					</xe:appSearchBar>
+				</xe:this.searchBar>
+				<xe:this.titleBarTabs>
+					<xe:basicLeafNode label="Foo"></xe:basicLeafNode>
+				</xe:this.titleBarTabs></xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout></xp:view>

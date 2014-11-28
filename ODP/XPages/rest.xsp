@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:scriptBlock id="scriptBlock1" type="text/javascript">
+		<xp:this.value><![CDATA[dojo.ready(function(){
+  // Look up the node we'll stick the text under.
+  var targetNode = dojo.byId("JSON");
+
+  // The parameters to pass to xhrGet, the url, how to handle it, and the callbacks.
+  var xhrArgs = {
+    url: "http://192.168.1.43:8080/eegrating/test/three",
+    handleAs: "text",
+    headers: {"X-Requested-With": "XMLHttpRequest"},
+    preventCache: true,
+    load: function(data){
+	targetNode.innerHTML = data;
+    },
+    error: function(error){
+      targetNode.innerHTML = "An unexpected error occurred: " + error;
+    }
+  }
+
+  // Call the asynchronous xhrGet
+  var deferred = dojo.xhrGet(xhrArgs);
+});]]></xp:this.value>
+	</xp:scriptBlock>
+
+	<div id="JSON"></div>
+</xp:view>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:ccLayout pageTitle="XSP Partial refresh vs. event">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:panel id="panel">
+					<xp:label id="label1">
+						<xp:this.value><![CDATA[#{javascript:sessionScope.get("scopedValue")}]]></xp:this.value>
+					</xp:label>
+				</xp:panel>
+				<xp:button value="Clear" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:sessionScope.put("scopedValue", null)}]]></xp:this.action>
+					</xp:eventHandler></xp:button>
+				<xp:button value="Set value" id="button2">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="norefresh">
+						<xp:this.action><![CDATA[#{javascript:sessionScope.put("scopedValue", "value set and no refresh")}]]></xp:this.action>
+					</xp:eventHandler></xp:button>
+				<xp:button value="XSP refresh" id="button3">
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script><![CDATA[XSP.partialRefreshGet("#{id:panel}")]]></xp:this.script>
+					</xp:eventHandler></xp:button>
+				<xp:button value="Label" id="button4"></xp:button></xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

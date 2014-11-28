@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.Dialog"></xp:dojoModule>
+	</xp:this.resources>
+	<xc:ccLayout pageTitle="XPage form within Dojo Dialog">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:button value="Open dialog" id="button1"
+					styleClass="lotusBtn">
+				<xp:eventHandler event="onclick" submit="false">
+					<xp:this.script><![CDATA[var dialog = new dijit.Dialog({
+	title: "Dojo dialog form",
+	style:"width:500px;height:auto;",
+	content:'<iframe src="iframeform.xsp?action=newDocument" frameborder="0" height="400" />',
+	autofocus:false
+}).show()]]></xp:this.script>
+				</xp:eventHandler></xp:button>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="ByName"></xp:dominoView>
+	</xp:this.data>
+	<xc:ccLayout pageTitle="ERNI Demo">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<h1>SSJS</h1>
+				<xp:repeat id="repeat1" rows="30" var="entry">
+					<xp:this.value><![CDATA[#{javascript:var liste:java.util.List = new java.util.ArrayList();
+liste.add(new com.erni.StatusEntry("Erni 1", "erni1.xsp", "test"));
+liste.add(new com.erni.StatusEntry("Erni 2", "erni2.xsp", "schnuck"));
+
+return liste}]]></xp:this.value>
+
+					<xp:link escape="true" text="#{javascript:entry.getLinkText()}"
+						id="link1">
+						<xp:eventHandler event="onclick" submit="false">
+							<xp:this.script><![CDATA[alert("#{javascript:entry.getLinkPage()}")]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:link>
+					<xp:br></xp:br>
+
+				</xp:repeat>
+				<h1>JavaBean</h1>
+				<xp:repeat id="repeat2" rows="30" var="entry"
+					value="#{javascript:statusentries.entries}">
+
+
+					<xp:link escape="true" text="#{javascript:entry.getLinkText()}"
+						id="link2">
+
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action><![CDATA[#{javascript:viewScope.put("page", entry.getLinkPage())
+print(entry.getLinkPage())}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:link>
+					<xp:br></xp:br>
+
+				</xp:repeat>
+
+				<xp:div id="pagePanel">
+					<xp:label id="label1">
+						<xp:this.value><![CDATA[#{javascript:viewScope.get("page")}]]></xp:this.value>
+					</xp:label>
+
+				</xp:div>
+
+				<xp:pager
+					layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow"
+					partialRefresh="true" id="pager1" for="repeat3"
+					alwaysCalculateLast="true">
+				</xp:pager>
+				<xp:table>
+					<xp:repeat id="repeat3" rows="10" value="#{view1}" var="names">
+						<xp:tr>
+							<xp:td>
+								<xp:label value="#{javascript:names.getColumnValues().elementAt(0)}"
+									id="label2">
+								</xp:label>
+							</xp:td>
+						</xp:tr>
+					</xp:repeat>
+				</xp:table>
+
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+
+</xp:view>

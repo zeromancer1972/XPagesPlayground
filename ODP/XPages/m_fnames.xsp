@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xe:singlePageApp selectedPageName="Namen" id="singlePageApp1">
+
+		<xe:appPage pageName="Namen" resetContent="true"
+			id="appPage2">
+			<xp:panel>
+				<xe:djxmHeading label="Namen" back="Back"
+					moveTo="Homepage" id="djxmHeading2">
+					<xp:this.facets>
+						<xp:panel xp:key="actionFacet">
+							<xe:toolBarButton label="New"
+								id="toolBarButton1">
+								<xp:eventHandler event="onClick"
+									submit="true" refreshMode="complete" id="eventHandler1">
+									<xe:this.action>
+										<xe:moveTo
+											direction="Left to Right" transitionType="slide"
+											forceFullRefresh="true" targetPage="Name">
+										</xe:moveTo>
+									</xe:this.action>
+								</xp:eventHandler>
+							</xe:toolBarButton>
+						</xp:panel>
+					</xp:this.facets>
+				</xe:djxmHeading>
+				<xp:this.data>
+					<xp:dominoView var="NamenView" viewName="ByName"></xp:dominoView>
+				</xp:this.data>
+				<xe:dataView openDocAsReadonly="true" pageName="Name"
+					value="#{NamenView}" infiniteScroll="enable" id="dataView1">
+					<xe:this.summaryColumn>
+						<xe:viewSummaryColumn columnName="lastname"></xe:viewSummaryColumn>
+					</xe:this.summaryColumn>
+				</xe:dataView>
+			</xp:panel>
+		</xe:appPage>
+		<xe:appPage pageName="Name" resetContent="true" id="appPage3">
+			<xp:panel>
+				<xe:djxmHeading label="Name" back="Back" moveTo="Namen"
+					id="djxmHeading3">
+					<xp:this.facets>
+						<xp:panel xp:key="actionFacet"></xp:panel>
+					</xp:this.facets>
+				</xe:djxmHeading>
+				<xe:tabBar barType="segmentedControl" id="tabBar1">
+					<xe:tabBarButton label="Edit"
+						rendered="#{javascript:!NameDocument.isEditable();}"
+						id="tabBarButton1">
+						<xp:eventHandler event="onClick" submit="true"
+							refreshMode="complete" id="eventHandler2">
+							<xe:this.action>
+								<xp:changeDocumentMode mode="edit"
+									var="NameDocument">
+								</xp:changeDocumentMode>
+							</xe:this.action>
+						</xp:eventHandler>
+					</xe:tabBarButton>
+					<xe:tabBarButton label="Save"
+						rendered="#{javascript:NameDocument.isEditable();}"
+						id="tabBarButton2">
+						<xp:eventHandler event="onClick" submit="true"
+							refreshMode="complete" id="eventHandler3">
+							<xe:this.action>
+								<xe:moveTo direction="Right to Left"
+									transitionType="slide" forceFullRefresh="true"
+									targetPage="Namen" saveDocument="true">
+								</xe:moveTo>
+							</xe:this.action>
+						</xp:eventHandler>
+					</xe:tabBarButton>
+					<xe:tabBarButton label="Delete"
+						rendered="#{javascript:!NameDocument.isNewNote();}"
+						id="tabBarButton3">
+						<xp:eventHandler event="onClick" submit="true"
+							refreshMode="complete" id="eventHandler4">
+							<xe:this.action>
+								<xp:actionGroup>
+									<xp:deleteDocument name=""
+										message="Are you sure you want to delete this Document?"
+										var="NameDocument">
+									</xp:deleteDocument>
+									<xe:moveTo direction="Right to Left"
+										transitionType="slide" forceFullRefresh="true"
+										targetPage="Namen">
+									</xe:moveTo>
+								</xp:actionGroup>
+							</xe:this.action>
+						</xp:eventHandler>
+					</xe:tabBarButton>
+				</xe:tabBar>
+				<xp:this.data>
+					<xp:dominoDocument var="NameDocument"
+						formName="fUserName">
+					</xp:dominoDocument>
+				</xp:this.data>
+				<xe:formTable id="formTable1">
+					<xe:formRow label="number" labelPosition="above"
+						id="formRow1">
+						<xp:inputText value="#{NameDocument.number}"
+							id="inputText1">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="gender" labelPosition="above"
+						id="formRow2">
+						<xp:inputText value="#{NameDocument.gender}"
+							id="inputText2">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="firstname" labelPosition="above"
+						id="formRow3">
+						<xp:inputText value="#{NameDocument.firstname}"
+							id="inputText3">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="middle" labelPosition="above"
+						id="formRow4">
+						<xp:inputText value="#{NameDocument.middle}"
+							id="inputText4">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="lastname" labelPosition="above"
+						id="formRow5">
+						<xp:inputText value="#{NameDocument.lastname}"
+							id="inputText5">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="address" labelPosition="above"
+						id="formRow6">
+						<xp:inputText value="#{NameDocument.address}"
+							id="inputText6">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="city" labelPosition="above"
+						id="formRow7">
+						<xp:inputText value="#{NameDocument.city}"
+							id="inputText7">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="state" labelPosition="above"
+						id="formRow8">
+						<xp:inputText value="#{NameDocument.state}"
+							id="inputText8">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="zip" labelPosition="above"
+						id="formRow9">
+						<xp:inputText value="#{NameDocument.zip}"
+							id="inputText9">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="country" labelPosition="above"
+						id="formRow10">
+						<xp:inputText value="#{NameDocument.country}"
+							id="inputText10">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="email" labelPosition="above"
+						id="formRow11">
+						<xp:inputText value="#{NameDocument.email}"
+							id="inputText11">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="password" labelPosition="above"
+						id="formRow12">
+						<xp:inputText value="#{NameDocument.password}"
+							id="inputText12">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="phone" labelPosition="above"
+						id="formRow13">
+						<xp:inputText value="#{NameDocument.phone}"
+							id="inputText13">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="mothersmaiden"
+						labelPosition="above" id="formRow14">
+						<xp:inputText
+							value="#{NameDocument.mothersmaiden}" id="inputText14">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="birthday" labelPosition="above"
+						id="formRow15">
+						<xp:inputText value="#{NameDocument.birthday}"
+							id="inputText15">
+							<xp:dateTimeHelper id="dateTimeHelper1"></xp:dateTimeHelper>
+							<xp:this.converter>
+								<xp:convertDateTime timeStyle="short"
+									type="date">
+								</xp:convertDateTime>
+							</xp:this.converter>
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="cctype" labelPosition="above"
+						id="formRow16">
+						<xp:inputText value="#{NameDocument.cctype}"
+							id="inputText16">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="ccnumber" labelPosition="above"
+						id="formRow17">
+						<xp:inputText value="#{NameDocument.ccnumber}"
+							id="inputText17">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="cvv2" labelPosition="above"
+						id="formRow18">
+						<xp:inputText value="#{NameDocument.cvv2}"
+							id="inputText18">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="ccexpires" labelPosition="above"
+						id="formRow19">
+						<xp:inputText value="#{NameDocument.ccexpires}"
+							id="inputText19">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="national" labelPosition="above"
+						id="formRow20">
+						<xp:inputText value="#{NameDocument.national}"
+							id="inputText20">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="ups" labelPosition="above"
+						id="formRow21">
+						<xp:inputText value="#{NameDocument.ups}"
+							id="inputText21">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="occupation" labelPosition="above"
+						id="formRow22">
+						<xp:inputText value="#{NameDocument.occupation}"
+							id="inputText22">
+						</xp:inputText>
+					</xe:formRow>
+				</xe:formTable>
+			</xp:panel>
+		</xe:appPage>
+	</xe:singlePageApp></xp:view>

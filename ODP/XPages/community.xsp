@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var community = sessionScope.get("community")}]]></xp:this.beforePageLoad>
+
+	<xc:ccLayout>
+		<xc:this.pageTitle><![CDATA[#{javascript:try {
+	var community = sessionScope.get("community");
+	community.getTitle();
+} catch(e){
+	return "No community selected";		
+}}]]></xc:this.pageTitle>
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xe:widgetContainer id="widgetContainer2"
+					titleBarText="Details">
+					<xp:table styleClass="lotusTable">
+						<xp:tr styleClass="lotusFirst">
+							<xp:td style="width:10%">
+								<xp:div styleClass="lotusPhoto">
+									<xp:image id="image2">
+										<xp:this.url><![CDATA[#{javascript:try {
+	var community = sessionScope.get("community");
+	community.getLogoUrl();
+} catch(e){
+	return "";		
+}}]]></xp:this.url>
+									</xp:image>
+								</xp:div>
+							</xp:td>
+							<xp:td style="width:20%">
+								<xp:text escape="true"
+									id="computedField1" tagName="h3" styleClass="lotusHeader">
+									<xp:this.value><![CDATA[#{javascript:"Members"}]]></xp:this.value>
+								</xp:text>
+								<xp:repeat id="repeat1" rows="30"
+									var="members" indexVar="memberIndex">
+									<xp:this.value><![CDATA[#{javascript:try {
+	var community = sessionScope.get("community")
+	return community.getMembers();
+} catch(e){
+}}]]></xp:this.value>
+									<xp:link id="label2"
+										text="#{javascript:members.getName()}">
+										<xp:eventHandler event="onclick"
+											submit="true" refreshMode="partial"
+											refreshId="memberDetails">
+											<xp:this.action><![CDATA[#{javascript:sessionScope.put("memberId", members.getUserid())}]]></xp:this.action>
+										</xp:eventHandler>
+									</xp:link>
+									<xp:br></xp:br>
+								</xp:repeat>
+							</xp:td>
+							<xp:td>
+								<xp:text escape="true"
+									id="computedField2" tagName="h3" styleClass="lotusHeader">
+									<xp:this.value><![CDATA[#{javascript:"Member details"}]]></xp:this.value>
+								</xp:text>
+
+								<xp:panel id="memberDetails">
+									<xp:this.data>
+										<xe:objectData var="member"
+											scope="session">
+
+											<xe:this.createObject><![CDATA[#{javascript:com.ibm.sbt.services.client.connections.profiles.ProfileService("connections")}]]></xe:this.createObject>
+										</xe:objectData>
+									</xp:this.data>
+									<xp:div styleClass="lotusPhoto">
+										<xp:image id="image1">
+											<xp:this.url><![CDATA[#{javascript:try {
+	member.getProfile(sessionScope.get("memberId")).getThumbnailUrl()
+} catch(e) {
+}}]]></xp:this.url>
+										</xp:image>
+									</xp:div>
+									<xp:label id="label1">
+										<xp:this.value><![CDATA[#{javascript:try {
+	member.getProfile(sessionScope.get("memberId")).getEmail()
+} catch(e) {
+}}]]></xp:this.value>
+									</xp:label>
+									<xp:br></xp:br>
+									<xp:label id="label3">
+										<xp:this.value><![CDATA[#{javascript:try {
+	member.getProfile(sessionScope.get("memberId")).getUserid()
+} catch(e) {
+}}]]></xp:this.value>
+									</xp:label>
+
+								</xp:panel>
+
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+				</xe:widgetContainer>
+				<xe:widgetContainer id="widgetContainer3">
+
+				<xp:inputTextarea id="statusupdate"
+					style="width:100%">
+					<xp:this.attrs>
+						<xp:attr name="placeholder"
+							value="What are you doing?">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputTextarea>
+				<xp:br></xp:br>
+				<xp:button value="Post update" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:var update = new com.connections.StatusUpdate();
+return update.postEntry(getComponent("statusupdate").getValue())}]]></xp:this.action>
+					</xp:eventHandler></xp:button></xe:widgetContainer>
+				<xe:widgetContainer id="widgetContainer1"
+					titleBarText="Bookmarks">
+					<xp:repeat id="repeat2" rows="30" var="bookmark">
+						<xp:this.value><![CDATA[#{javascript:try {
+	var service = new com.ibm.sbt.services.client.connections.communities.CommunityService("connections");
+	var uuid = sessionScope.get("community").getCommunityUuid();
+	return service.getBookmarks(uuid);
+} catch(e){
+	print(e.getMessage())
+	return null;
+}}]]></xp:this.value>
+						<xp:link escape="true"
+							text="#{javascript:bookmark.getTitle()}" id="link1"
+							value="#{javascript:bookmark.getId()}">
+
+						</xp:link>
+						<xp:br></xp:br>
+					</xp:repeat>
+				</xe:widgetContainer>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

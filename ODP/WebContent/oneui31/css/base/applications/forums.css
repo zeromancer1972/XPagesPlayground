@@ -1,0 +1,197 @@
+/* Copyright IBM Corp. 2012, 2013  All Rights Reserved.              */
+
+form.lotusDialog { background-color: #ffffff; }
+.lotusDialogContent .lotusForm2 fieldset { margin: 0px 0px 0px 0px; background-color: white; }
+.dj_ie .forumsTagField { width: expression(this.parentNode.offsetWidth*0.99)!important; }
+.dj_ie .forumsFileField { width: 450px; }
+.dj_ie7 .lotusHeader,
+.dj_ie7 .lotusActionBar,
+.dj_ie7 .lotusMessage,
+.dj_ie7 .lotusTabContainer { position:static !important; }
+.dj_ie .lotusDialogBorder { width: 500px; }
+.lotusui30 .ForumForm .lotusForm2 .lotusText {width: 98%;}
+.forumTextArea { width: 99%; }
+.forumsLockedLabel { display: none !important; }
+.forumsLocked .forumsLockedLabel { display: inline !important; }
+.forumsLocked .forumsUnlockedLabel { display: none !important; }
+.forumsFollowedLabel { display: none; }
+.forumsFollowed .forumsFollowedLabel { display: inline; }
+.forumsFollowed .forumsUnfollowedLabel { display: none; }
+.lotusTags a.tagAdd {
+margin-left: 8px;
+}
+.lotusTags .tagEmpty {
+font-style: italic;
+margin-left: 0;
+margin-right: 0;
+}
+
+.lotusui_ie8 .lotusui30 .forumPagedList .lotusTable TD[colspan*='2'],
+.lotusui_ie8 .lotusui30 .forumPagedList .lotusTable TD[colspan*='5'] {
+	width: auto;
+}
+
+.lotusTags .lotusText {width:200px !important;}
+.lotusForm2 .lotusTags .lotusText {width:200px;}
+.lotusTags form input {margin:0 5px; padding:1px 0;}
+.lotusTags a img {margin:0 1px;}
+.categoryTree{
+border:2px solid #C0C0C0;
+height:250px;
+margin:5px;
+overflow:auto;
+padding:5px;
+}
+div.categoryTree .dijitTreeExpando.dijitTreeExpandoOpened, div.moveTopicTree .dijitTreeExpando.dijitTreeExpandoOpened{
+background-image: url("/com.ibm.lconn.core.styles.oneui3/images/Icons/Other/iconsOther16-8bit.png");
+background-repeat: no-repeat;
+display: inline-block;
+background-position: 0 -204px;
+height: 16px;
+width: 16px;
+}
+div.categoryTree .dijitTreeExpando.dijitTreeExpandoClosed, div.moveTopicTree  .dijitTreeExpando.dijitTreeExpandoClosed{
+background-image: url("/com.ibm.lconn.core.styles.oneui3/images/Icons/Other/iconsOther16-8bit.png");
+background-repeat: no-repeat;
+display: inline-block;
+background-position: 0 -228px;
+height: 16px;
+width: 16px;
+}
+div.categoryTree .dijitTreeExpando.dijitTreeExpandoLeaf, div.moveTopicTree  .dijitTreeExpando.dijitTreeExpandoLeaf{
+background-image: url("/com.ibm.lconn.core.styles.oneui3/images/Icons/Other/iconsOther16-8bit.png");
+background-repeat: no-repeat;
+display: inline-block;
+background-position: 0 -252px;
+height: 16px;
+width: 16px;
+}
+.categoryTree .categoryCloseIcon {
+background-image:url("/com.ibm.lconn.core.styles.oneui3/sprite/images/iconFolderClose16.png");
+background-repeat:no-repeat;
+display:inline-block;
+height:14px;
+width:16px;
+}
+.categoryTree .categoryOpenIcon {
+background-image:url("/com.ibm.lconn.core.styles.oneui3/sprite/images/iconFolderOpen16.png");
+background-repeat:no-repeat;
+display:inline-block;
+height:15px;
+width:16px;
+}
+.moveTopicTree{
+border:2px solid #C0C0C0;
+height:200px;
+margin:5px;
+overflow:auto;
+padding:5px;
+}
+.moveTopicTree .categoryCloseIcon {
+background-image:url("/com.ibm.lconn.core.styles.oneui3/sprite/images/iconFolderClose16.png");
+background-repeat:no-repeat;
+display:inline-block;
+height:14px;
+width:16px;
+}
+.moveTopicTree .categoryOpenIcon {
+background-image:url("/com.ibm.lconn.core.styles.oneui3/sprite/images/iconFolderOpen16.png");
+background-repeat:no-repeat;
+display:inline-block;
+height:15px;
+width:16px;
+}
+.forumPaging {
+margin-top:auto;
+}
+.forumPickMoveButton{
+margin-right:0px;
+}
+.forumNotQestionIndicator {display: inline;}
+.lotusActions .forumPostActionToolBarIndicator .forumNotQestionIndicator a {display: inline;}
+.forumQuestion .forumNotQestionIndicator {display: none;}
+.forumQuestion .lotusActions .forumPostActionToolBarIndicator .forumNotQestionIndicator a {display: none;}
+.forumQestionIndicator {display: none;}
+.lotusActions .forumPostActionToolBarIndicator .forumQestionIndicator a {display: none;}
+.forumQuestion .forumQestionIndicator {display: inline;}
+.forumQuestion .lotusActions .forumPostActionToolBarIndicator .forumQestionIndicator a {display: inline;}
+.forumResolvedQuestionIndicator {display: none;}
+.forumQuestion .forumResolvedQuestion .forumResolvedQuestionIndicator {display: inline;}
+.forumNotResolvedQuestionIndicator {display: none;}
+.forumQuestion .forumNotResolvedQuestion .forumNotResolvedQuestionIndicator {display: inline;}
+.forumAnswerIndicator {display: none;}
+.lotusActions .forumPostActionToolBarIndicator .forumAnswerIndicator a {display: none;}
+.forumQuestion .forumAnswer .forumAnswerIndicator {display: inline;}
+.forumQuestion .forumAnswer .forumPostActionToolBarIndicator .forumAnswerIndicator a {display: inline;}
+.forumNotAnswerIndicator {display: none;}
+.lotusActions .forumPostActionToolBarIndicator .forumNotAnswerIndicator a {display: none;}
+.forumQuestion .forumNotAnswerIndicator {display: inline;}
+.forumQuestion .lotusActions .forumPostActionToolBarIndicator .forumNotAnswerIndicator a {display: inline;}
+.forumQuestion .forumAnswer .forumNotAnswerIndicator {display: none;}
+.forumQuestion .lotusActions .forumPostActionToolBarIndicator.forumAnswer .forumNotAnswerIndicator a {display: none;}
+.forumQuestionStatus { font-weight: bold; color: #2e6f35; }
+.lotusForum .forumQuestion .lotusCommentList .forumAnswer,
+.lotusForum .forumQuestion .lotusCommentList .forumAnswer .lotusPostContent,
+.lotusForum .forumQuestion .lotusCommentList .forumAnswer .lotusPostContent li {background-color:#ebf8dc;}
+.lotusForum .forumQuestion .lotusPost .lotusMessage { margin-bottom: 0px; }
+.lotusForum .forumQuestion .lotusPost .lotusMeta { margin-bottom: 0px; }
+.lotusForum .lotusPost .lotusPostAuthorInfo .lotusPostAvatar { float:left; padding-top:5px; padding-right: 5px; }
+.lotusForum .lotusPost .lotusPostAuthorInfo { width:125px; padding: 6px 10px; }
+.lotusForum .lotusPost .lotusPostAuthorInfo .lotusPostName, .lotusForum .lotusPostAuthorInfo .lotusMeta { padding-left: 37px; }
+.lotusForum .lotusPaging { background-color: #FAFAFA; border:1px solid #DDDDDD; margin: 0px 0px 5px 0px; padding:1px 5px 3px; }
+.lotusForum .lotusPost {padding-top: 0px; }
+.lotusForum .lotusPostDetails { overflow: auto; line-height: 1.5; word-wrap: break-word;}
+.lotusForum .lotusPostDetails h1 { line-height: 1.5; }
+.lotusForum .lotusPost .lotusPostDetails { overflow: auto;}
+.lotusForum .lotusPostForm { padding-bottom: 0px; }
+.lotusForum .lotusPost .lotusForm2 { padding-top : 10px; }
+.lotusui30 .lotusPostForm .lotusForm2 .lotusMessage2 { margin-bottom: 0px; margin-top: 0px; top: 0px;}
+.lotusForum .lotusCommentList .lotusPost h4 { font-size: 1em; }
+.AddMembers .typeAhead {
+width: 310px;
+}
+.AddMembers .field {
+padding:5px 5px 5px 1px;
+}
+.dijitMenu .searchDirectory {
+background-repeat: no-repeat;
+background-position: center left;
+padding-left: 20px;
+}
+.lotusFilters2 .contentWrap {
+max-width:350px;
+}
+.lotusFilters .contentWrap {
+max-width:350px;
+}
+.field .fieldAdd {
+cursor: pointer;
+}
+.field .fieldAdd {
+border: none;
+padding: 0;
+background-color: transparent;
+}
+.field .fieldAddText {
+height: 16px;
+width: 16px;
+border: none;
+display: none;
+}
+.dijit_a11y  .field .fieldAddText {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: inline;
+}
+.lotusMeta  input.lotusBtn  { font-size: 1em; }
+.lotusui30 ul.dfAttachment li.lotusFirst {padding: 0 0 0 5px;}
+.lotusui30 .lotusForm .forumFormTable .lotusFormTitle h2 {margin: 0px 15px 15px 0px;}
+.lotusui30 .forumSettings .lotusForm .lotusFormTitle h2 {margin: 0px 15px 15px 0px;}
+.lotusui30 .lotusForm .lotusFormTable.forumFormTable td.lotusFormFooter {padding: 10px 0;}
+.lotusui30 .lotusForumNewTopic .lotusForm2 .lotusFormBody {padding: 0 20px;}
+.lotusui30 .lotusForum .lotusForm2 .lotusFormBody {padding: 0 20px;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.lotusPostForm .lotusForm2 .forumTopicDescription {overflow:auto;}
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:scriptBlock id="scriptBlock1" type="text/javascript">
+
+		<xp:this.value><![CDATA[#{javascript:return "var user = \"" + @UserName() + "\";"}]]></xp:this.value>
+	</xp:scriptBlock>
+</xp:view>

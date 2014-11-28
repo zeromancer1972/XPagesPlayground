@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xe:singlePageApp selectedPageName="Names" id="singlePageApp1">
+		<xe:appPage pageName="Names" resetContent="true"
+			id="appPage1">
+			<xc:ccNames></xc:ccNames>
+		</xe:appPage>
+		<xe:appPage pageName="Person" resetContent="true"
+			id="appPage2">
+			<xc:ccPerson></xc:ccPerson>
+		</xe:appPage>
+	</xe:singlePageApp></xp:view>

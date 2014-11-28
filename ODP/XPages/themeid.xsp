@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="Custom Theme IDs">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<p>The cool thing about theme IDs is that you define them
+					globally and can reuse them everywhere.</p>
+				<p>This is the definition in the theme resource:</p>
+				<tt>
+					<pre>
+						&lt;control&gt;
+							&lt;name&gt;HomepageLink&lt;/name&gt;
+							&lt;property&gt;
+								&lt;name&gt;text&lt;/name&gt;
+								&lt;value&gt;Visit my homepage&lt;/value&gt;
+							&lt;/property&gt;
+							&lt;property&gt;
+								&lt;name&gt;value&lt;/name&gt;
+								&lt;value&gt;http://www.oliverbusse.com
+								&lt;/value&gt;
+							&lt;/property&gt;
+							&lt;property&gt;
+								&lt;name&gt;target&lt;/name&gt;
+								&lt;value&gt;_blank&lt;/value&gt;
+							&lt;/property&gt;
+						&lt;/control&gt;
+					</pre>
+				</tt>
+				<xp:link escape="true" id="link1" themeId="HomepageLink">
+				</xp:link>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

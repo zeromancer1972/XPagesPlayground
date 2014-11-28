@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="JSON Tests">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<code>
+					<xp:panel tagName="tt">
+						<xp:text escape="true" id="computedField1" disableTheme="true">
+							<xp:this.value><![CDATA[#{javascript:var json = new com.tools.JSONGenerator();
+return json.getJson();}]]></xp:this.value>
+						</xp:text>
+					</xp:panel>
+				</code>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<table class="table table-striped">
+					<colgroup>
+						<col style="width: 200px" />
+						<col style="width: 200px" />
+						<col style="width: 200px" />
+					</colgroup>
+					<xp:repeat id="repeat1" rows="30" var="entry">
+						<xp:this.value><![CDATA[#{javascript:var json = new com.tools.JSONGenerator();
+var list = new com.tools.ListGenerator();
+return list.getList(json.getJson())}]]></xp:this.value>
+						<tr>
+							<td>
+								<xp:label id="label1">
+									<xp:this.value><![CDATA[#{javascript:entry.get("lastname")}]]></xp:this.value>
+								</xp:label>
+							</td>
+							<td>
+								<xp:label id="label2">
+									<xp:this.value><![CDATA[#{javascript:entry.get("firstname")}]]></xp:this.value>
+								</xp:label>
+							</td>
+							<td>
+								<xp:label id="label3">
+									<xp:this.value><![CDATA[#{javascript:entry.get("email")}]]></xp:this.value>
+								</xp:label>
+							</td>
+						</tr>
+					</xp:repeat>
+				</table>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

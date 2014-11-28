@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257B84006F3FC1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2be" sequence="123" unid="C821FA926AD5F196C1257B9D006E7194">
+<created><datetime dst="true">20130703T220620,36+02</datetime></created>
+<modified><datetime dst="true">20140402T183844,40+02</datetime></modified>
+<revised><datetime dst="true">20140402T183844,39+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140402T183844,40+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T220620,37+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>34567Cg~`</text></item>
+<item name="$TITLE" sign="true"><text>oneui3next.theme</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>oneui3next.theme</text></item>
+<item name="$CSSFiles"><textlist><text>oneui31/css/defaultTheme/defaultTheme.css</text><text>oneui31/css/defaultTheme/dojoTheme.css</text><text>adapt.css</text><text>styles.css</text></textlist></item></note>

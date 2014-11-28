@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="cheque" formName="MCheck"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:table>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_ jahr:" id="co_Jahr_Label1"
+					for="co_Jahr1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_Jahr}" id="co_Jahr1">
+					<xp:this.converter>
+						<xp:convertNumber></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_ name:" id="co_Name_Label1"
+					for="co_Name1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_Name}" id="co_Name1"></xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_ werk:" id="co_Werk_Label1"
+					for="co_Werk1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_Werk}" id="co_Werk1"></xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_ nummer:" id="co_Nummer_Label1"
+					for="co_Nummer1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_Nummer}"
+					id="co_Nummer1">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_bleiter:" id="co_bleiter_Label1"
+					for="co_bleiter1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_bleiter}"
+					id="co_bleiter1">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_vorjahr:" id="co_vorjahr_Label1"
+					for="co_vorjahr1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_vorjahr}"
+					id="co_vorjahr1">
+					<xp:this.converter>
+						<xp:convertNumber></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_aktjahr:" id="co_aktjahr_Label1"
+					for="co_aktjahr1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_aktjahr}"
+					id="co_aktjahr1">
+					<xp:this.converter>
+						<xp:convertNumber></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_ugesamt:" id="co_ugesamt_Label1"
+					for="co_ugesamt1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_ugesamt}"
+					id="co_ugesamt1">
+					<xp:this.converter>
+						<xp:convertNumber></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_uweg:" id="co_uweg_Label1"
+					for="co_uweg1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_uweg}" id="co_uweg1">
+					<xp:this.converter>
+						<xp:convertNumber></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Co_urest:" id="co_urest_Label1"
+					for="co_urest1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{cheque.co_urest}"
+					id="co_urest1">
+					<xp:this.converter>
+						<xp:convertNumber></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+	</xp:table></xp:view>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.2'
+ replicaid='C1257B84006F3FC1'>
+<noteinfo noteid='2ee' unid='98AD382C58F1DEE7C1257BDE004390D6' sequence='5'>
+<created><datetime dst='true'>20130906T141759,90+02</datetime></created>
+<modified><datetime dst='true'>20130906T171050,29+02</datetime></modified>
+<revised><datetime dst='true'>20130906T141846,51+02</datetime></revised>
+<lastaccessed><datetime>20131115T220146,91+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130906T171050,29+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>stamm</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+WgAFADAALAAFAAQABwAGAAkABABOYW1lVm9ybmFtZUdlYkRhdCRDb25mbGljdCRSRUYEAAQAAAAa
+AAUABABGb3JtAQAFAFN0YW1tAAoCAwAHAAoABAAJTDFT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+BgAAAABE
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQADAAMACAAAAFZDAAAEAAEAAAAAAFAAAQAACgAAAAAAAAAAAAICAAAAVkMAAAcAAAAAAAAAUAAB
+AAAKAAAAAAAAAAAAAgIAAABWQwAABgAAAAAAAABQAAEAAAoAAAAAAAAAAAACAgAAAE5hbWUjVm9y
+bmFtZUdlYkRhdCYAAQAAAAEBAAkBAAAKAQEOCgAAAQCtKwEAAQABAAAAAAAAAAAAV0MBAQAJAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAA
+AAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAD/
+/wAAAAAAAAAAAAAAAAAAQgAAAAAAAQD///8ABQD///8AAQAAAAAAAAAAAAAAAAABAP///wABAP//
+/wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAAAAAAAQBYQwBMgAMAAAAAAAECAgIBAQEBBwQDAAAA
+AAAAAAAgLi46
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:button value="Dialog 1" id="button2">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial">
+			<xp:this.action><![CDATA[#{javascript:getComponent("dlgOne").show()}]]></xp:this.action>
+		</xp:eventHandler></xp:button>
+
+	<xe:dialog id="dlgOne" title="Dialog 1" style="width:500.0px"
+		refreshOnShow="true" preventCache="true" partialRefresh="true">
+		<xe:dialogContent id="dialogContent1"></xe:dialogContent>
+		<xe:dialogButtonBar id="dialogButtonBar1">
+
+			<xp:button value="Close" id="button1">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:getComponent("dlgOne").hide()}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</xe:dialogButtonBar>
+	</xe:dialog>
+</xp:view>

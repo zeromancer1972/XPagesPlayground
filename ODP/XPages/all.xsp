@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="All docus"><xp:this.facets>
+	<xp:div xp:key="facetMiddle">
+		<xp:viewPanel rows="30" id="viewPanel1">
+			<xp:this.facets>
+				<xp:pager partialRefresh="true"
+					layout="Previous Group Next" xp:key="headerPager" id="pager1"
+					alwaysCalculateLast="true">
+				</xp:pager>
+			</xp:this.facets>
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="ALL"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="form" id="viewColumn1" displayAs="link">
+				<xp:viewColumnHeader value="#" id="viewColumnHeader1"></xp:viewColumnHeader>
+			</xp:viewColumn>
+		</xp:viewPanel></xp:div></xp:this.facets></xc:ccLayout></xp:view>

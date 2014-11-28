@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var locker = new de.fkie.wwm.DocumentLocker(currentDocument.getDocument(), currentDocument.isEditable());
+locker.lock();}]]></xp:this.afterRenderResponse>
+	<xc:ccLayout pageTitle="Document with locking">
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xp:div>
+					<xp:button id="button1"
+						rendered="#{javascript:currentDocument.isEditable()}">
+						<xp:this.value><![CDATA[Save & Close]]></xp:this.value>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action>
+
+
+
+								<xp:actionGroup>
+									<xp:saveDocument var="document1">
+									</xp:saveDocument>
+									<xp:executeScript>
+										<xp:this.script><![CDATA[#{javascript:var locker= new de.fkie.wwm.DocumentLocker(currentDocument.getDocument(), currentDocument.isEditable());
+locker.unlock();}]]></xp:this.script>
+									</xp:executeScript>
+									<xp:openPage name="/locked.xsp">
+									</xp:openPage>
+
+								</xp:actionGroup>
+
+
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Edit" id="button3">
+						<xp:this.rendered><![CDATA[#{javascript:var locker = new de.fkie.wwm.DocumentLocker(currentDocument.getDocument(), currentDocument.isEditable());
+!currentDocument.isEditable() && !locker.isLocked()}]]></xp:this.rendered>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action>
+								<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Cancel" id="button2">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action>
+
+								<xp:actionGroup>
+									<xp:executeScript>
+										<xp:this.script><![CDATA[#{javascript:var locker= new de.fkie.wwm.DocumentLocker(currentDocument.getDocument(), currentDocument.isEditable());
+locker.unlock();}]]></xp:this.script>
+									</xp:executeScript>
+									<xp:openPage name="/locked.xsp"></xp:openPage>
+
+								</xp:actionGroup>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+				</xp:div>
+				<xp:table>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Subject:" id="subject_Label1" for="subject1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText value="#{document1.subject}" id="subject1">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Body:" id="body_Label1" for="body1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputRichText value="#{document1.body}" id="body1">
+							</xp:inputRichText>
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="doc">
+		</xp:dominoDocument>
+	</xp:this.data>
+
+</xp:view>

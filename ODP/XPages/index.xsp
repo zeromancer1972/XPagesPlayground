@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.Dialog"></xp:dojoModule>
+	</xp:this.resources>
+	<xc:ccLayout pageTitle="Welcome to my XPages Playground">
+		<xp:this.facets>
+
+			<xe:widgetContainer id="widgetContainer2" xp:key="facetRight"
+				titleBarText="About">
+				This is a demo application for XPage development.
+				<xp:br></xp:br>
+				It uses the following extensions:
+				<ul>
+					<li>OneUI Nextgen style</li>
+					<li>OpenNTF
+						Extension Library 9</li>
+					<li>Bootstrap 4 XPages</li>
+					<li>OpenNTF Domino API</li>
+					<li>IBM Social Business Toolkit SDK</li>
+					<li>POI 4 XPages</li>
+				</ul>
+			</xe:widgetContainer>
+			<xp:div xp:key="facetMiddle">
+				<xp:label id="label2">
+					<xp:this.value><![CDATA[#{javascript:var dojolib = com.ibm.xsp.context.DojoLibraryFactory.getDefaultLibrary();
+return dojolib.getVersion().toString();}]]></xp:this.value>
+				</xp:label>
+
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+	<xp:panel dojoType="dijit.Dialog" id="dialog1">
+		<xp:this.dojoAttributes>
+			<xp:dojoAttribute name="title" value="Dialog"></xp:dojoAttribute>
+			<xp:dojoAttribute name="style" value="width:300px"></xp:dojoAttribute>
+		</xp:this.dojoAttributes>
+
+		<xp:label value="#{javascript:return new java.util.Date().toLocaleString()}"
+			id="label1">
+		</xp:label>
+		<xp:br></xp:br>
+		<xp:inputText id="inputText1"></xp:inputText>
+		<xp:br></xp:br>
+		<xp:button value="Close" id="button2">
+			<xp:eventHandler event="onclick" submit="false">
+				<xp:this.script><![CDATA[dijit.byId("#{id:dialog1}").hide()]]></xp:this.script>
+			</xp:eventHandler>
+		</xp:button>
+
+	</xp:panel>
+
+
+</xp:view>

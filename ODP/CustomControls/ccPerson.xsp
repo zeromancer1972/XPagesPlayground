@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view id="view1" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core">
+  <xe:djxmHeading back="Back" id="djxmHeading1" label="Person" moveTo="Names">
+    <xp:this.facets>
+      <xp:panel xp:key="actionFacet"/>
+    </xp:this.facets>
+  </xe:djxmHeading>
+  <xe:tabBar barType="segmentedControl" id="tabBar1">
+    <xe:tabBarButton id="tabBarButton1" label="Edit" rendered="#{javascript:!PersonDocument.isEditable();}">
+      <xp:eventHandler event="onClick" id="eventHandler1"
+        refreshMode="complete" submit="true">
+        <xe:this.action>
+          <xp:changeDocumentMode mode="edit" var="PersonDocument"/>
+        </xe:this.action>
+      </xp:eventHandler>
+    </xe:tabBarButton>
+    <xe:tabBarButton id="tabBarButton2" label="Save" rendered="#{javascript:PersonDocument.isEditable();}">
+      <xp:eventHandler event="onClick" id="eventHandler2"
+        refreshMode="complete" submit="true">
+        <xe:this.action>
+          <xe:moveTo direction="Right to Left" forceFullRefresh="true"
+            saveDocument="true" targetPage="Names" transitionType="slide"/>
+        </xe:this.action>
+      </xp:eventHandler>
+    </xe:tabBarButton>
+    <xe:tabBarButton id="tabBarButton3" label="Delete" rendered="#{javascript:!PersonDocument.isNewNote();}">
+      <xp:eventHandler event="onClick" id="eventHandler3"
+        refreshMode="complete" submit="true">
+        <xe:this.action>
+          <xp:actionGroup>
+            <xp:deleteDocument
+              message="Are you sure you want to delete this Document?"
+              name="" var="PersonDocument"/>
+            <xe:moveTo direction="Right to Left" forceFullRefresh="true"
+              targetPage="Names" transitionType="slide"/>
+          </xp:actionGroup>
+        </xe:this.action>
+      </xp:eventHandler>
+    </xe:tabBarButton>
+  </xe:tabBar>
+  <xp:this.data>
+    <xp:dominoDocument formName="fUserName" var="PersonDocument"/>
+  </xp:this.data>
+  <xe:formTable id="formTable1">
+    <xe:formRow id="formRow1" label="number">
+      <xp:inputText id="inputText1" value="#{PersonDocument.number}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow2" label="gender">
+      <xp:inputText id="inputText2" value="#{PersonDocument.gender}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow3" label="firstname">
+      <xp:inputText id="inputText3" value="#{PersonDocument.firstname}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow4" label="middle">
+      <xp:inputText id="inputText4" value="#{PersonDocument.middle}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow5" label="lastname">
+      <xp:inputText id="inputText5" value="#{PersonDocument.lastname}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow6" label="address">
+      <xp:inputText id="inputText6" value="#{PersonDocument.address}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow7" label="city">
+      <xp:inputText id="inputText7" value="#{PersonDocument.city}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow8" label="state">
+      <xp:inputText id="inputText8" value="#{PersonDocument.state}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow9" label="zip">
+      <xp:inputText id="inputText9" value="#{PersonDocument.zip}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow10" label="country">
+      <xp:inputText id="inputText10" value="#{PersonDocument.country}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow11" label="email">
+      <xp:inputText id="inputText11" value="#{PersonDocument.email}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow12" label="password">
+      <xp:inputText id="inputText12" value="#{PersonDocument.password}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow13" label="phone">
+      <xp:inputText id="inputText13" value="#{PersonDocument.phone}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow14" label="mothersmaiden">
+      <xp:inputText id="inputText14" value="#{PersonDocument.mothersmaiden}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow15" label="birthday">
+      <xp:inputText id="inputText15" value="#{PersonDocument.birthday}">
+        <xp:dateTimeHelper id="dateTimeHelper1"/>
+        <xp:this.converter>
+          <xp:convertDateTime timeStyle="short" type="date"/>
+        </xp:this.converter>
+      </xp:inputText>
+    </xe:formRow>
+    <xe:formRow id="formRow16" label="cctype">
+      <xp:inputText id="inputText16" value="#{PersonDocument.cctype}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow17" label="ccnumber">
+      <xp:inputText id="inputText17" value="#{PersonDocument.ccnumber}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow18" label="cvv2">
+      <xp:inputText id="inputText18" value="#{PersonDocument.cvv2}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow19" label="ccexpires">
+      <xp:inputText id="inputText19" value="#{PersonDocument.ccexpires}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow20" label="national">
+      <xp:inputText id="inputText20" value="#{PersonDocument.national}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow21" label="ups">
+      <xp:inputText id="inputText21" value="#{PersonDocument.ups}"/>
+    </xe:formRow>
+    <xe:formRow id="formRow22" label="occupation">
+      <xp:inputText id="inputText22" value="#{PersonDocument.occupation}"/>
+    </xe:formRow>
+  </xe:formTable>
+</xp:view>
